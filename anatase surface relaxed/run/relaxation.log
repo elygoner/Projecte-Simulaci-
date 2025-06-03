@@ -1,0 +1,1873 @@
+Executable      : siesta
+Version         : 5.2.1
+Architecture    : x86_64
+Compiler version: GNU-13.3.0
+Compiler flags  : -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem <prefix>/include -I<prefix>/_build_env/include -fdebug-prefix-map=<prefix>/work=/usr/local/src/conda/siesta-5.2.1 -fdebug-prefix-map=<prefix>=/usr/local/src/conda-prefix -I<prefix>/lib -fallow-argument-mismatch -O3
+Parallelisations: none
+NetCDF support
+NetCDF-4 support
+Lua support
+DFT-D3 support
+
+Runtime information:
+* Directory : /home/samba/homes/convidat/Desktop/Projecte-Simulaci--main/anatase surface relaxed/run
+* Running in serial mode.
+>> Start of run:   3-JUN-2025  22:26:46
+
+                           *********************** 
+                           *  WELCOME TO SIESTA  * 
+                           *********************** 
+
+ NOTE: Siesta V5 introduces some new defaults for basis-set generation
+ NOTE: which might lead to slightly different numerical results.
+ NOTE: Please see the manual for full details and compatibility measures.
+
+
+reinit: Reading from file relaxation.fdf
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: 
+reinit: -----------------------------------------------------------------------
+reinit: System Label: SurRel
+reinit: -----------------------------------------------------------------------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+Species number:   1 Atomic number:   22 Label: Ti
+Species number:   2 Atomic number:    8 Label: O
+
+Ground state valence configuration (from tables):   4s02  4p00  3d02  4f00
+Ground state valence configuration (from tables):   2s02  2p04  3d00  4f00
+
+---- Processing specs for species: Ti
+Reading pseudopotential information in PSML from:
+  Ti.psml
+PSML file version: 1.1
+Using libxc ids:  101 130
+GGA--PBE XC_GGA_X_PBE--XC_GGA_C_PBE pb
+PSML uuid: caed23e0-be41-11e7-4603-0bd897f88bea
+Semicore shell(s) with  8 electrons included in the valence for Ti
+
+---- Processing specs for species: O
+Reading pseudopotential information in PSML from:
+  O.psml
+PSML file version: 1.1
+Using libxc ids:  101 130
+GGA--PBE XC_GGA_X_PBE--XC_GGA_C_PBE pb
+PSML uuid: 3cff85a0-be41-11e7-6c5c-1b1fe64d18ef
+
+---- Pseudopotential check for Ti
+
+Pseudized shells:
+3s( 2.00) rc: 1.36
+3p( 6.00) rc: 1.31
+3d( 2.00) rc: 1.66
+Valence configuration for ps generation: 3s:3p:3d:4s: Total charge:  12.000000
+Semicore shell(s): 3s 3p
+Fallback to non-perturbative polarization scheme for Ti
+Please see the manual if this is not desired in principle
+
+---- Pseudopotential check for O 
+
+Pseudized shells:
+2s( 2.00) rc: 1.36
+2p( 4.00) rc: 1.46
+3d( 0.00) rc: 1.26
+Valence configuration for ps generation: 2s:2p: Total charge:   6.000000
+For Ti, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+For O, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+Ti pseudopotential only contains V_ls up to l=2 -- lmxkb reset.
+O pseudopotential only contains V_ls up to l=2 -- lmxkb reset.
+
+<basis_specs>
+===============================================================================
+Ti                   Z=  22    Mass=  47.867        Charge= 0.17977+309
+Lmxo=2 Lmxkb= 2    BasisType=split      Semic=T
+L=0  Nsemic=1  Cnfigmx=4
+          i=1  nzeta=1  polorb=0  (3s)  (semicore shell)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000    
+            lambdas:    1.0000    
+          i=2  nzeta=2  polorb=0  (4s)  (to be polarized non-perturbatively)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=1  Cnfigmx=4
+          i=1  nzeta=1  polorb=0  (3p)  (semicore shell)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000    
+            lambdas:    1.0000    
+          i=2  nzeta=1  polorb=0  (4p)  (non-perturbative polarization shell)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:   0.19310-311
+               qyuk:   0.19763-322
+               qwid:   0.21220-312
+                rcs:    0.0000    
+            lambdas:    1.0000    
+L=2  Nsemic=0  Cnfigmx=3
+          i=1  nzeta=2  polorb=0  (3d)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+-------------------------------------------------------------------------------
+L=0  Nkbl=2  erefs: 0.17977+309 0.17977+309
+L=1  Nkbl=2  erefs: 0.17977+309 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+Using PAO.SplitTailNorm
+atom: Called for Ti                    (Z =  22)
+Maximum radius (at nrval) set to   50.00000 8518
+
+read_vps: Pseudopotential generation method:
+read_vps: ONCVPSP-3.Hamann's oncvpsp                        
+Valence charge in pseudo generation:   12.00000
+
+read_vps: Pseudopotential includes a core correction:
+read_vps: Pseudo-core for xc-correction
+
+xc_check: Exchange-correlation functional:
+xc_check: GGA Perdew, Burke & Ernzerhof 1996
+Got Vlocal (oncv-fit) from psml data
+Choosing vlocal chloc cutoff:  3.029916
+qtot up to nchloc:   12.00014688
+atom: Maximum radius for chlocal:    3.02992
+atom: Maximum radius for r*vlocal+2*Zval:    3.02992
+Reading KB projs from Ti psml data
+Using scalar-relativistic projectors in PSML file
+
+PSML: Kleinman-Bylander projectors: 
+   l= 0   rc=  1.375180   Ekb= 22.724697
+   l= 0   rc=  1.375180   Ekb=  2.527278
+   l= 1   rc=  1.326200   Ekb=  3.950805
+   l= 1   rc=  1.327537   Ekb= -0.169333
+   l= 2   rc=  1.683555   Ekb=-10.372181
+   l= 2   rc=  1.683555   Ekb= -2.954901
+
+PSML: Total number of  Kleinman-Bylander projectors:  18
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 3s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    2.635420
+                 energy =   -4.579527
+                kinetic =    2.326942
+    potential(screened) =   -6.906469
+       potential(ionic) =  -23.072621
+
+SPLIT: Basis orbitals for state 4s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    6.843982
+                 energy =   -0.314441
+                kinetic =    0.796941
+    potential(screened) =   -1.111382
+       potential(ionic) =   -8.916637
+
+   izeta = 2
+                 rmatch =    5.301264
+              splitnorm =    0.150000
+                 energy =   -0.140155
+                kinetic =    1.418596
+    potential(screened) =   -1.558752
+       potential(ionic) =  -10.896893
+
+SPLIT: Orbitals with angular momentum L= 1
+
+SPLIT: Basis orbitals for state 3p
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    2.931236
+                 energy =   -2.832213
+                kinetic =    5.021608
+    potential(screened) =   -7.853821
+       potential(ionic) =  -23.570229
+
+SPLIT: Basis orbitals for state 4p
+SPLIT: Non-perturbative polarization orbs for state 4s
+SPLIT: rc(1st zeta) (re)set to: 6.8440 (expansion factor: 1.0000)
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    6.843982
+                 energy =   -0.022664
+                kinetic =    0.981182
+    potential(screened) =   -1.003846
+       potential(ionic) =   -7.925992
+
+SPLIT: Orbitals with angular momentum L= 2
+
+SPLIT: Basis orbitals for state 3d
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    4.556878
+                 energy =   -0.289178
+                kinetic =    6.761259
+    potential(screened) =   -7.050436
+       potential(ionic) =  -20.805830
+
+   izeta = 2
+                 rmatch =    3.163483
+              splitnorm =    0.150000
+                 energy =   -0.141333
+                kinetic =    8.704185
+    potential(screened) =   -8.845518
+       potential(ionic) =  -23.898466
+atom: Total number of Sankey-type orbitals: 19
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 3s( 2.00) 4s( 2.00)                                                  
+ 3p( 6.00) 4p( 0.00)                                                  
+ 3d( 2.00)                                                            
+Vna: chval, zval:   12.00000  12.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   6.843982
+comcore: Pseudo-core radius Rcore=  1.766828
+
+atom: _________________________________________________________________________
+
+<basis_specs>
+===============================================================================
+O                    Z=   8    Mass=  15.999        Charge= 0.17977+309
+Lmxo=2 Lmxkb= 2    BasisType=split      Semic=F
+L=0  Nsemic=0  Cnfigmx=2
+          i=1  nzeta=2  polorb=0  (2s)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=0  Cnfigmx=2
+          i=1  nzeta=2  polorb=1  (2p)  (to be polarized perturbatively)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=2  Nsemic=0  Cnfigmx=3
+          i=1  nzeta=0  polorb=0  (3d)  (perturbative polarization orbital) (from 2p)
+-------------------------------------------------------------------------------
+L=0  Nkbl=1  erefs: 0.17977+309
+L=1  Nkbl=1  erefs: 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+Using PAO.SplitTailNorm
+atom: Called for O                     (Z =   8)
+Maximum radius (at nrval) set to   50.00000 8518
+
+read_vps: Pseudopotential generation method:
+read_vps: ONCVPSP-3.Hamann's oncvpsp                        
+Valence charge in pseudo generation:    6.00000
+
+read_vps: Pseudopotential includes a core correction:
+read_vps: Pseudo-core for xc-correction
+
+xc_check: Exchange-correlation functional:
+xc_check: GGA Perdew, Burke & Ernzerhof 1996
+Got Vlocal (oncv-fit) from psml data
+Choosing vlocal chloc cutoff:  6.020499
+qtot up to nchloc:    6.00001015
+atom: Maximum radius for chlocal:    6.02050
+atom: Maximum radius for r*vlocal+2*Zval:    6.02050
+Reading KB projs from O psml data
+Using scalar-relativistic projectors in PSML file
+
+PSML: Kleinman-Bylander projectors: 
+   l= 0   rc=  1.372412   Ekb= 12.113471
+   l= 0   rc=  1.372412   Ekb=  1.648048
+   l= 1   rc=  1.474132   Ekb= -9.434259
+   l= 1   rc=  1.474132   Ekb= -2.298541
+   l= 2   rc=  1.277664   Ekb= -2.663910
+
+PSML: Total number of  Kleinman-Bylander projectors:  13
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 2s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    3.214667
+                 energy =   -1.737143
+                kinetic =    1.647372
+    potential(screened) =   -3.384514
+       potential(ionic) =  -11.335845
+
+   izeta = 2
+                 rmatch =    2.206279
+              splitnorm =    0.150000
+                 energy =   -1.248930
+                kinetic =    2.868486
+    potential(screened) =   -4.117415
+       potential(ionic) =  -12.788572
+
+SPLIT: Orbitals with angular momentum L= 1
+
+SPLIT: Basis orbitals for state 2p
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    3.819866
+                 energy =   -0.639970
+                kinetic =    4.771237
+    potential(screened) =   -5.411207
+       potential(ionic) =  -13.142963
+
+   izeta = 2
+                 rmatch =    2.601252
+              splitnorm =    0.150000
+                 energy =   -0.382093
+                kinetic =    6.846164
+    potential(screened) =   -7.228258
+       potential(ionic) =  -15.727266
+
+POLgen: Perturbative polarization orbital with L=  2
+
+POLgen: Polarization orbital for state 2p
+Split based on tail norm
+
+   izeta = 1
+                     rc =    3.819866
+                 energy =    2.500658
+                kinetic =    4.605602
+    potential(screened) =   -2.104944
+       potential(ionic) =   -8.455031
+atom: Total number of Sankey-type orbitals: 13
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 2s( 2.00)                                                            
+ 2p( 4.00)                                                            
+ 3d( 0.00)                                                            
+Vna: chval, zval:    6.00000   6.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   3.819866
+comcore: Pseudo-core radius Rcore=  1.354557
+
+atom: _________________________________________________________________________
+
+prinput: Basis input 
+
+PAO.BasisType split     
+
+%block ChemicalSpeciesLabel
+    1   22 Ti                      # Species index, atomic number, species label
+    2    8 O                       # Species index, atomic number, species label
+%endblock ChemicalSpeciesLabel
+
+%block PAO.Basis                 # Define Basis set
+# WARNING: This information might be incomplete!
+Ti                    5                    # Species label, number of l-shells
+ n=3   0   1                         # n, l, Nzeta 
+   2.635   
+   1.000   
+ n=4   0   2                         # n, l, Nzeta 
+   6.844      5.301   
+   1.000      1.000   
+ n=3   1   1                         # n, l, Nzeta 
+   2.931   
+   1.000   
+ n=4   1   1                         # n, l, Nzeta 
+   6.844   
+   1.000   
+ n=3   2   2                         # n, l, Nzeta 
+   4.557      3.163   
+   1.000      1.000   
+O                     2                    # Species label, number of l-shells
+ n=2   0   2                         # n, l, Nzeta 
+   3.215      2.206   
+   1.000      1.000   
+ n=2   1   2 P   1                   # n, l, Nzeta, Polarization, NzetaPol
+   3.820      2.601   
+   1.000      1.000   
+%endblock PAO.Basis
+
+prinput: ----------------------------------------------------------------------
+
+Dumping basis to NetCDF file Ti.ion.nc
+Dumping basis to NetCDF file O.ion.nc
+coor:   Atomic-coordinates input format  =     Cartesian coordinates
+coor:                                          (in Angstroms)
+
+siesta: Atomic coordinates (Bohr) and species
+siesta:      3.57043   3.57043  27.87115  1        1
+siesta:      3.57043   0.00000  32.35810  1        2
+siesta:      0.00000   0.00000  18.89726  1        3
+siesta:      0.00000   3.57043  23.38421  1        4
+siesta:      0.00000   3.57043  27.11789  2        5
+siesta:      3.57043   3.57043  31.60484  2        6
+siesta:      3.57043   0.00000  28.62442  2        7
+siesta:      0.00000   0.00000  33.11137  2        8
+siesta:      0.00000   0.00000  22.63094  2        9
+siesta:      0.00000   3.57043  19.65052  2       10
+siesta:      3.57043   3.57043  24.13747  2       11
+siesta:      3.57043  10.71359  27.87115  1       12
+siesta:      3.57043   7.14316  32.35810  1       13
+siesta:      0.00000   7.14316  18.89726  1       14
+siesta:      0.00000  10.71359  23.38421  1       15
+siesta:      0.00000  10.71359  27.11789  2       16
+siesta:      3.57043  10.71359  31.60484  2       17
+siesta:      3.57043   7.14316  28.62442  2       18
+siesta:      0.00000   7.14316  33.11137  2       19
+siesta:      0.00000   7.14316  22.63094  2       20
+siesta:      0.00000  10.71359  19.65052  2       21
+siesta:      3.57043  10.71359  24.13747  2       22
+siesta:     10.71359   3.57043  27.87115  1       23
+siesta:     10.71359   0.00000  32.35810  1       24
+siesta:      7.14316   0.00000  18.89726  1       25
+siesta:      7.14316   3.57043  23.38421  1       26
+siesta:      7.14316   3.57043  27.11789  2       27
+siesta:     10.71359   3.57043  31.60484  2       28
+siesta:     10.71359   0.00000  28.62442  2       29
+siesta:      7.14316   0.00000  33.11137  2       30
+siesta:      7.14316   0.00000  22.63094  2       31
+siesta:      7.14316   3.57043  19.65052  2       32
+siesta:     10.71359   3.57043  24.13747  2       33
+siesta:     10.71359  10.71359  27.87115  1       34
+siesta:     10.71359   7.14316  32.35810  1       35
+siesta:      7.14316   7.14316  18.89726  1       36
+siesta:      7.14316  10.71359  23.38421  1       37
+siesta:      7.14316  10.71359  27.11789  2       38
+siesta:     10.71359  10.71359  31.60484  2       39
+siesta:     10.71359   7.14316  28.62442  2       40
+siesta:      7.14316   7.14316  33.11137  2       41
+siesta:      7.14316   7.14316  22.63094  2       42
+siesta:      7.14316  10.71359  19.65052  2       43
+siesta:     10.71359  10.71359  24.13747  2       44
+
+siesta: System type = slab      
+
+initatomlists: Number of atoms, orbitals, and projectors:     44   668   652
+
+coxmol: Writing XMOL coordinates into file SurRel.xyz                                                                                                                                                                                                                          
+
+siesta: ******************** Simulation parameters ****************************
+siesta:
+siesta: The following are some of the parameters of the simulation.
+siesta: A complete list of the parameters used, including default values,
+siesta: can be found in file out.fdf
+siesta:
+redata: Spin configuration                          = none
+redata: Number of spin components                   = 1
+redata: Time-Reversal Symmetry                      = T
+redata: Spin spiral                                 = F
+redata: Long output                                 =   F
+redata: Number of Atomic Species                    =        2
+redata: Charge density info will appear in .RHO file
+redata: Write Mulliken charges (when)               = none
+redata: Write Mulliken Pop.                         = NO
+redata: Write Hirshfeld charges (when)              = none
+redata: Write Voronoi charges (when)                = none
+redata: Write spin charge (when)                    = none
+redata: Matel table size (NRTAB)                    =     1024
+redata: Mesh Cutoff                                 =   300.0000 Ry
+redata: Net charge of the system                    =     0.0000 |e|
+redata: Min. number of SCF Iter                     =        0
+redata: Max. number of SCF Iter                     =     1000
+redata: SCF convergence failure will abort job
+redata: SCF mix quantity                            = Hamiltonian
+redata: Mix DM or H after convergence               =   F
+redata: Recompute H after scf cycle                 =   F
+redata: Mix DM in first SCF step                    =   T
+redata: Write Pulay info on disk                    =   F
+redata: New DM Occupancy tolerance                  = 0.000000000001
+redata: No kicks to SCF
+redata: DM Mixing Weight for Kicks                  =     0.5000
+redata: Require Harris convergence for SCF          =   F
+redata: Harris energy tolerance for SCF             =     0.000100 eV
+redata: Require DM convergence for SCF              =   T
+redata: DM tolerance for SCF                        =     0.000100
+redata: Require EDM convergence for SCF             =   F
+redata: EDM tolerance for SCF                       =     0.001000 eV
+redata: Require H convergence for SCF               =   T
+redata: Hamiltonian tolerance for SCF               =     0.001000 eV
+redata: Require (free) Energy convergence for SCF   =   F
+redata: (free) Energy tolerance for SCF             =     0.000100 eV
+redata: Using DFT-D3 dispersion                     =   F
+redata: Using Saved Data (generic)                  =   F
+redata: Use continuation files for DM               =   T
+redata: Neglect nonoverlap interactions             =   F
+redata: Method of Calculation                       = Diagonalization
+redata: Electronic Temperature                      =   299.9863 K
+redata: Fix the spin of the system                  =   F
+redata: Max. number of TDED Iter                    =        1
+redata: Number of TDED substeps                     =        3
+redata: Dynamics option                             = CG coord. optimization
+redata: Variable cell                               =   T
+redata: Use continuation files for CG               =   F
+redata: Max atomic displ per move                   =     0.1058 Ang
+redata: Maximum number of optimization moves        =        6
+redata: Force tolerance                             =     0.0050 eV/Ang
+redata: Stress tolerance                            =     0.0100 GPa
+mix.SCF: Pulay mixing                            = Pulay
+mix.SCF:    Variant                              = stable
+mix.SCF:    History steps                        = 2
+mix.SCF:    Linear mixing weight                 =     0.250000
+mix.SCF:    Mixing weight                        =     0.250000
+mix.SCF:    SVD condition                        = 0.1000E-07
+redata: Save all siesta data in one NC              =   F
+redata: ***********************************************************************
+
+%block SCF.Mixers
+  Pulay
+%endblock SCF.Mixers
+
+%block SCF.Mixer.Pulay
+  # Mixing method
+  method pulay
+  variant stable
+
+  # Mixing options
+  weight 0.2500
+  weight.linear 0.2500
+  history 2
+%endblock SCF.Mixer.Pulay
+
+DM_history_depth set to one: no extrapolation allowed by default for geometry relaxation
+Size of DM history Fstack: 1
+Total number of electrons:   360.000000
+Total ionic charge:   360.000000
+k-point displ. along   1 input, could be:     0.00    0.50
+k-point displ. along   2 input, could be:     0.00    0.50
+k-point displ. along   3 input, could be:     0.00    0.50
+ Kpoints in:            8 . Kpoints trimmed:            8
+
+siesta: k-grid: Number of k-points = 8
+siesta: k-points from Monkhorst-Pack grid
+siesta: k-cutoff (effective) =     5.669 Ang
+siesta: k-point supercell and displacements
+siesta: k-grid:     2     0     0      0.000
+siesta: k-grid:     0     2     0      0.000
+siesta: k-grid:     0     0     2      0.000
+
+diag: Algorithm                                     = D&C
+diag: Used triangular part                          = Lower
+diag: Absolute tolerance                            =  0.100E-15
+diag: Orthogonalization factor                      =  0.100E-05
+diag: Memory factor                                 =  1.0000
+
+superc: Internal auxiliary supercell:     5 x     5 x     1  =      25
+superc: Number of atoms, orbitals, and projectors:   1100  16700  16300
+
+siesta: Constraint (24): pos
+  [ 1 -- 24 ]
+
+
+ts: **************************************************************
+ts: Save H and S matrices                           =    F
+ts: Save DM and EDM matrices                        =    F
+ts: Only save the overlap matrix S                  =    F
+ts: **************************************************************
+
+************************ Begin: TS CHECKS AND WARNINGS ************************
+************************ End: TS CHECKS AND WARNINGS **************************
+
+
+                     ====================================
+                        Begin CG opt. move =      0
+                     ====================================
+
+superc: Internal auxiliary supercell:     5 x     5 x     1  =      25
+superc: Number of atoms, orbitals, and projectors:   1100  16700  16300
+
+outcell: Unit cell vectors (Ang):
+        5.669390    0.000000    0.000000
+        0.000000    5.669390    0.000000
+        0.000000    0.000000   17.521780
+
+outcell: Cell vector modules (Ang)   :    5.669390    5.669390   17.521780
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :    563.1848
+siesta: WARNING: Atoms     2   897 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms     3   901 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms     4   209 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms     5   199 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms     7   892 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms     8   200 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms     9   895 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    12   227 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    15   220 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    16   210 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    17   222 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    19   211 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    21   223 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    23    49 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    24   919 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    25   923 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    29   914 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    31   917 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    33    48 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    34   249 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    35    63 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    37   251 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    39   244 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    43   245 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    44    59 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    46   941 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    47   945 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    51   936 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    53   939 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    56   271 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    59   273 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    61   266 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    65   267 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    67    93 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    68   963 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    69   967 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    73   958 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    75   961 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    77    92 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    78   293 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    79   107 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    81   295 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    83   288 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    87   289 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    88   103 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    90   985 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    91   989 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    95   980 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms    97   983 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   100   315 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   103   317 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   105   310 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   109   311 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   111   137 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   112  1007 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   113  1011 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   117  1002 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   119  1005 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   121   136 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   122   337 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   123   151 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   125   339 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   127   332 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   131   333 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   132   147 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   134  1029 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   135  1033 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   139  1024 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   141  1027 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   144   359 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   147   361 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   149   354 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   153   355 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   155   181 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   156  1051 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   157  1055 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   161  1046 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   163  1049 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   165   180 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   166   381 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   167   195 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   169   383 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   171   376 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   175   377 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   176   191 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   178  1073 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   179  1077 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   183  1068 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   185  1071 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   188   403 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   191   405 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   193   398 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   197   399 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   200  1095 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   201  1099 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   205  1090 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   207  1093 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   210   425 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   213   427 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   215   420 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   219   421 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   224   429 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   225   419 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   228   420 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   232   447 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   235   440 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   236   430 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   237   442 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   239   431 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   241   443 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   243   269 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   244   272 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   253   268 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   254   469 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   255   283 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   257   471 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   259   464 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   263   465 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   264   279 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   276   491 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   279   493 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   281   486 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   285   487 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   287   313 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   288   316 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   297   312 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   298   513 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   299   327 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   301   515 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   303   508 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   307   509 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   308   323 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   320   535 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   323   537 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   325   530 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   329   531 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   331   357 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   332   360 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   341   356 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   342   557 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   343   371 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   345   559 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   347   552 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   351   553 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   352   367 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   364   579 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   367   581 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   369   574 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   373   575 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   375   401 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   376   404 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   385   400 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   386   601 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   387   415 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   389   603 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   391   596 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   395   597 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   396   411 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   408   623 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   411   625 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   413   618 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   417   619 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   430   645 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   433   647 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   435   640 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   439   641 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   444   649 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   445   639 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   448   640 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   452   667 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   455   660 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   456   650 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   457   662 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   459   651 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   461   663 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   463   489 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   464   492 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   473   488 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   474   689 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   475   503 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   477   691 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   479   684 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   483   685 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   484   499 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   496   711 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   499   713 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   501   706 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   505   707 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   507   533 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   508   536 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   517   532 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   518   733 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   519   547 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   521   735 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   523   728 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   527   729 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   528   543 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   540   755 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   543   757 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   545   750 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   549   751 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   551   577 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   552   580 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   561   576 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   562   777 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   563   591 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   565   779 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   567   772 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   571   773 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   572   587 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   584   799 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   587   801 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   589   794 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   593   795 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   595   621 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   596   624 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   605   620 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   606   821 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   607   635 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   609   823 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   611   816 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   615   817 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   616   631 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   628   843 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   631   845 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   633   838 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   637   839 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   650   865 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   653   867 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   655   860 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   659   861 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   664   869 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   665   859 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   668   860 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   672   887 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   675   880 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   676   870 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   677   882 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   679   871 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   681   883 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   683   709 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   684   712 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   693   708 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   694   909 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   695   723 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   697   911 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   699   904 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   703   905 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   704   719 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   716   931 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   719   933 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   721   926 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   725   927 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   727   753 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   728   756 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   737   752 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   738   953 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   739   767 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   741   955 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   743   948 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   747   949 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   748   763 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   760   975 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   763   977 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   765   970 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   769   971 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   771   797 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   772   800 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   781   796 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   782   997 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   783   811 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   785   999 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   787   992 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   791   993 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   792   807 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   804  1019 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   807  1021 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   809  1014 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   813  1015 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   815   841 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   816   844 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   825   840 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   826  1041 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   827   855 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   829  1043 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   831  1036 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   835  1037 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   836   851 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   848  1063 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   851  1065 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   853  1058 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   857  1059 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   870  1085 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   873  1087 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   875  1080 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   879  1081 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   884  1089 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   885  1079 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   888  1080 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   895  1100 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   896  1090 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   899  1091 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   903   929 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   904   932 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   913   928 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   914   940 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   915   943 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   924   939 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   947   973 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   948   976 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   957   972 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   958   984 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   959   987 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   968   983 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   991  1017 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms   992  1020 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1001  1016 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1002  1028 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1003  1031 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1012  1027 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1035  1061 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1036  1064 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1045  1060 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1046  1072 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1047  1075 too close: rij =    0.398610 Ang
+siesta: WARNING: Atoms  1056  1071 too close: rij =    0.398610 Ang
+<dSpData1D:S at geom step 0
+  <sparsity:sparsity for geom step 0
+    nrows_g=668 nrows=668 sparsity=1.4362 nnzs=640854, refcount: 7>
+  <dData1D:(new from dSpData1D) n=640854, refcount: 1>
+refcount: 1>
+new_DM -- step:     1
+Initializing Density Matrix...
+
+Attempting to read DM from file... Failed...
+DM filled with atomic data:
+<dSpData2D:DM initialized from atoms
+  <sparsity:sparsity for geom step 0
+    nrows_g=668 nrows=668 sparsity=1.4362 nnzs=640854, refcount: 8>
+  <dData2D:DM n=640854 m=1, refcount: 1>
+refcount: 1>
+No. of atoms with KB's overlaping orbs in proc 0. Max # of overlaps:     216     353
+
+InitMesh: MESH = 60 x 60 x 192 = 691200
+InitMesh: Mesh cutoff (required, used) =   300.000   309.551 Ry
+New grid distribution [1]: sub = 2
+
+stepf: Fermi-Dirac step function
+
+siesta: Program's energy decomposition (eV):
+siesta: Ebs     =     -7772.736871
+siesta: Eions   =     56901.549464
+siesta: Ena     =     18111.165343
+siesta: Ekin    =     27763.132439
+siesta: Enl     =     -5030.956227
+siesta: Eso     =         0.000000
+siesta: Edftu   =         0.000000
+siesta: DEna    =     -1779.635211
+siesta: DUscf   =       531.525514
+siesta: DUext   =         0.000000
+siesta: Ex      =     -7832.494776
+siesta: Ec      =      -524.855269
+siesta: Exc     =     -8357.350046
+siesta: EbV     =         0.000000
+siesta: eta*DQ  =         0.000000
+siesta: Emadel  =         0.000000
+siesta: Emeta   =         0.000000
+siesta: Emolmec =         0.000000
+siesta: Ekinion =         0.000000
+siesta: Eharris =    -23260.123827
+siesta: Etot    =    -25663.667652
+siesta: FreeEng =    -25663.704400
+
+        iscf     Eharris(eV)        E_KS(eV)     FreeEng(eV)     dDmax    Ef(eV) dHmax(eV)
+   scf:    1   -23260.123827   -25663.667652   -25663.704400 13.386267 -5.648665 50.414269
+timer: Routine,Calls,Time,% = IterSCF        1      25.019  64.05
+   scf:    2   -17461.947113   -23267.632216   -23267.672195  1.648056 -4.675483224.108026
+   scf:    3   -22243.002426   -25183.279575   -25183.320209  1.354928 -4.952370122.999029
+   scf:    4   -15236.520505   -22878.388262   -22878.405656  1.787617 -7.254126240.857687
+   scf:    5     1213.155041   -17038.421382   -17038.468660  2.797289 -2.031846361.255284
+   scf:    6   193050.616940    38826.448502    38826.421816 65.278187 -0.389706865.720505
+   scf:    7    32844.935664    -3700.810595    -3700.835523 63.423304-19.919205549.921071
+   scf:    8   636469.808228   169283.054465   169283.035006167.869849 -5.061783**********
+   scf:    9   257087.728787    41584.160349    41584.136114168.041723  1.311167875.031235
+   scf:   10   253587.883602    40041.589245    40041.575011 82.995491-63.235899904.450471
+   scf:   11   407471.262949   114316.809241   114316.800660 45.366111-22.649338**********
+   scf:   12  1043329.241379   240682.487588   240682.472026153.716553-22.864619**********
+   scf:   13   132719.986129    29336.594127    29336.577039151.663755-58.657171937.582108
+   scf:   14   862984.847846   225982.684447   225982.683705180.752324-23.878425**********
+   scf:   15   553782.286695   105115.500596   105115.482809180.928049-13.524575**********
+   scf:   16   280759.710253    41551.468871    41551.452953 68.319683-73.365619949.040072
+   scf:   17   481950.675845   140624.748374   140624.735539 62.249039-25.806271**********
+   scf:   18  1076743.390031   246094.257349   246094.251663142.933827-33.970291**********
+   scf:   19   138852.206239    28774.098565    28774.080131141.137648-67.085609936.045569
+   scf:   20   814346.314432   213563.248276   213563.233443170.932283-23.019639**********
+   scf:   21   622792.109017   119063.566770   119063.550017171.206160-18.892507**********
+   scf:   22   245013.292417    34851.099745    34851.089002 60.047643-70.084678896.323010
+   scf:   23   521258.993595   148843.368725   148843.335966 86.322468-24.000975**********
+   scf:   24   998344.011351   226127.335827   226127.325080137.710066-31.262519**********
+   scf:   25   168194.335595    28652.289612    28652.284494134.894186-70.825989932.382487
+   scf:   26   777568.630518   208555.056538   208555.019300164.306434-21.018959**********
+   scf:   27   669071.747319   132722.234813   132722.209306164.589942-25.207942**********
+   scf:   28   228449.410960    32528.056026    32528.042256 73.902843-73.986282937.800835
+   scf:   29   548587.213520   152876.624371   152876.612387 84.198590-25.090554**********
+   scf:   30   972042.518423   216252.961584   216252.927416133.634062-29.037254**********
+   scf:   31   177721.312710    27668.770330    27668.767998130.785828-68.550009906.181225
+   scf:   32   717668.931374   193262.969390   193262.942372157.739451-20.016795**********
+   scf:   33   683334.626366   140011.792924   140011.768576158.095008-27.348889**********
+   scf:   34   228374.947127    34660.936504    34660.923673 79.313694-74.832442964.835964
+   scf:   35   575431.383835   156742.200317   156742.186750 94.333748-27.887538**********
+   scf:   36   905932.247388   197640.878551   197640.847517131.685053-27.860425**********
+   scf:   37   193962.955362    26404.476554    26404.457727128.831126-68.305349872.427175
+   scf:   38   568141.346447   152360.451976   152360.407346139.055537-22.000647**********
+   scf:   39   844418.334143   184922.516880   184922.500496140.272560-27.103805**********
+   scf:   40   204796.226895    28365.565971    28365.547180118.510633-69.100162899.158277
+   scf:   41   549313.486595   147727.552674   147727.546614126.787733-22.256612**********
+   scf:   42   884197.216903   197282.587168   197282.568829128.768011-28.529624**********
+   scf:   43   201880.812284    27994.967551    27994.935440126.058505-70.429170894.961287
+   scf:   44   553016.707790   148010.391995   148010.382570115.071092-22.323415**********
+   scf:   45   850394.613224   187679.467546   187679.452152124.115922-28.769465**********
+   scf:   46   202628.430035    28172.311918    28172.292124121.352185-69.566726899.650244
+   scf:   47   558639.363790   150516.659445   150516.656207126.819632-22.293576**********
+   scf:   48   892371.694111   198344.434794   198344.420251130.585838-27.638139**********
+   scf:   49   198492.284229    27278.499272    27278.482129127.662792-70.225451889.815290
+   scf:   50   553279.718714   147823.729773   147823.720992113.616090-22.558707**********
+   scf:   51   846905.829767   186543.255715   186543.241532124.359275-28.298036**********
+   scf:   52   204061.221532    28286.447900    28286.422839121.600794-69.229535896.370547
+   scf:   53   548316.381280   147169.023368   147169.009749114.165649-22.427789**********
+   scf:   54   884139.306230   197165.031983   197165.008221128.892168-28.269179**********
+   scf:   55   203477.571754    28161.249198    28161.221246126.153864-70.088834893.840163
+   scf:   56   550527.192025   147476.437986   147476.417669115.704644-22.166306**********
+   scf:   57   853841.533717   188917.744235   188917.718370125.279135-28.990856**********
+   scf:   58   197799.936210    27401.182956    27401.178531122.499121-70.017031896.739865
+   scf:   59   560350.408063   150474.727791   150474.725689123.746265-22.507642**********
+   scf:   60   854990.100882   187731.983776   187731.969849126.848188-27.629454**********
+   scf:   61   202320.469034    28045.204411    28045.185731123.938962-68.964123892.112158
+   scf:   62   552135.620360   147953.142795   147953.112601120.875413-22.588099**********
+   scf:   63   883911.666426   197011.478913   197011.464560129.525029-27.826003**********
+   scf:   64   205701.661643    28357.875808    28357.860837126.791311-70.219961893.276119
+   scf:   65   547788.763097   147045.096884   147045.084537112.498609-22.200650**********
+   scf:   66   875646.927280   194871.953028   194871.915817128.004256-29.089832**********
+   scf:   67   196971.803760    27175.054835    27175.047430125.257227-70.278630892.784901
+   scf:   68   552607.101013   147529.710367   147529.702371112.878836-22.474710**********
+   scf:   69   845498.747546   186075.708073   186075.686604123.837975-28.167565**********
+   scf:   70   203890.860475    28258.888040    28258.863371121.047076-68.985503894.850412
+   scf:   71   557721.537820   150618.053160   150618.036267130.020851-22.137407**********
+   scf:   72   894286.883872   199067.085512   199067.078757131.256209-27.677900**********
+   scf:   73   199687.988464    27700.312486    27700.294874128.233888-70.316897895.261098
+   scf:   74   564325.011353   150946.106054   150946.092030123.517491-22.602318**********
+   scf:   75   848647.509960   186742.794410   186742.785586124.749484-28.362645**********
+   scf:   76   208266.415537    29169.296907    29169.278525121.355358-69.991147915.971201
+   scf:   77   547372.834117   147056.921815   147056.903942111.127988-22.718733**********
+   scf:   78   887408.036032   198178.778502   198178.763032129.246012-28.846555**********
+   scf:   79   200567.051807    27807.195208    27807.170991126.521992-70.381487895.552097
+   scf:   80   552024.141733   147460.916623   147460.899669113.289290-22.464146**********
+   scf:   81   848829.387956   187224.271999   187224.261428124.108831-28.505289**********
+   scf:   82   203266.285467    28153.976265    28153.958763121.358326-69.311022895.070044
+   scf:   83   551711.897360   148334.942409   148334.883610115.841784-22.351365**********
+   scf:   84   888576.858549   197953.323842   197953.305478129.809022-27.990214**********
+   scf:   85   198624.719740    27357.446436    27357.427456126.984772-70.167723890.492020
+   scf:   86   553900.246127   148023.091900   148023.084825115.375345-22.444931**********
+   scf:   87   847266.239986   186659.566330   186659.554182124.340317-28.284317**********
+   scf:   88   204261.458226    28335.136696    28335.112723121.560948-69.300742897.599390
+   scf:   89   556872.219381   150298.754121   150298.725405127.092770-22.307479**********
+   scf:   90   893464.400765   198831.129769   198831.121641130.801268-27.845404**********
+   scf:   91   198453.562218    27463.094937    27463.078598127.880361-70.301449893.578441
+   scf:   92   562223.694197   150278.127291   150278.111414122.354809-22.577487**********
+   scf:   93   847076.278571   186311.642715   186311.628511123.886692-28.243620**********
+   scf:   94   206250.364698    28729.792928    28729.774056121.126176-69.778963909.608745
+   scf:   95   549957.722420   147997.490118   147997.438973114.180853-22.566545**********
+   scf:   96   887741.900316   197866.568654   197866.548554129.374457-28.513668**********
+   scf:   97   200736.095301    27815.228052    27815.198549126.584487-70.159406894.623330
+   scf:   98   552975.866042   147799.330588   147799.314362115.595145-22.371629**********
+   scf:   99   849820.595105   187555.874533   187555.861936124.797229-28.457719**********
+   scf:  100   203542.307681    28224.429140    28224.412679122.028536-69.492925897.146558
+   scf:  101   554525.406477   149326.045801   149326.006651117.626809-22.386725**********
+   scf:  102   891278.545755   198368.493234   198368.476048130.246472-27.891573**********
+   scf:  103   197548.878118    27194.031567    27194.017432127.378946-70.202459890.108260
+   scf:  104   555506.131130   148357.711122   148357.703308116.059747-22.526483**********
+   scf:  105   845813.106861   186134.828309   186134.809644124.008471-28.136813**********
+   scf:  106   204594.895701    28346.718588    28346.696506121.243511-69.246160897.910411
+   scf:  107   550386.774556   148077.988521   148077.933317117.845354-22.352788**********
+   scf:  108   887097.909584   197742.829938   197742.807020129.377234-28.258728**********
+   scf:  109   202473.291551    28088.849087    28088.820105126.580423-70.154963895.410384
+   scf:  110   553666.829984   148173.823002   148173.810244117.178727-22.324974**********
+   scf:  111   852107.351666   188266.207511   188266.184466124.816724-28.756315**********
+   scf:  112   202555.146320    28155.628226    28155.609486122.041911-69.803682901.105489
+   scf:  113   558527.345108   150418.463287   150418.462120125.610821-22.343541**********
+   scf:  114   888403.722786   197186.233495   197186.206808130.195456-27.803001**********
+   scf:  115   198602.419226    27290.583968    27290.566325127.272613-70.084460889.752934
+   scf:  116   552055.392037   147499.171920   147499.154473113.563258-22.549219**********
+   scf:  117   847254.669475   186717.173164   186717.159533124.437068-28.301412**********
+   scf:  118   203855.365888    28256.211069    28256.189504121.680854-69.211723894.803496
+   scf:  119   548411.090165   147144.239054   147144.228319114.177066-22.436242**********
+   scf:  120   884037.449591   197151.905798   197151.883682128.897082-28.243488**********
+   scf:  121   203546.003022    28155.827003    28155.798545126.161198-70.100750893.550740
+   scf:  122   550293.824636   147433.994850   147433.974913115.237312-22.168065**********
+   scf:  123   854245.085594   189024.549400   189024.522229125.215378-29.013397**********
+   scf:  124   197630.665681    27380.611796    27380.607464122.434558-70.011211896.648162
+   scf:  125   560547.922635   150510.669956   150510.667896123.884421-22.507015**********
+   scf:  126   854825.452242   187678.891936   187678.879094126.835571-27.600169**********
+   scf:  127   202406.650499    28050.007958    28049.989346123.926128-68.960506892.002234
+   scf:  128   552033.554898   147949.366161   147949.335680120.767408-22.583230**********
+   scf:  129   884061.966525   197054.509851   197054.495720129.550734-27.839820**********
+   scf:  130   205646.985592    28358.081403    28358.066315126.815992-70.221387893.373038
+   scf:  131   547914.028718   147062.833644   147062.820876112.568985-22.209249**********
+   scf:  132   873986.575218   194418.864119   194418.829916128.004850-29.102823**********
+   scf:  133   196926.421148    27175.611753    27175.605355125.255528-70.256896893.030262
+   scf:  134   552591.158590   147514.861174   147514.852768112.852174-22.505506**********
+   scf:  135   845282.398248   186003.349779   186003.326320123.770466-28.154807**********
+   scf:  136   203885.777618    28257.546687    28257.522205120.979805-68.957765894.665065
+   scf:  137   557601.444984   150572.255419   150572.233348130.158906-22.125792**********
+   scf:  138   894091.113669   199044.641432   199044.634236131.394498-27.688245**********
+   scf:  139   199952.536601    27744.319935    27744.300998128.190169-70.326590895.525837
+   scf:  140   564092.171086   150899.400989   150899.386988123.466297-22.598936**********
+   scf:  141   848913.938177   186834.952836   186834.944667124.699008-28.397221**********
+   scf:  142   208037.719598    29135.780097    29135.760533121.355514-70.008673915.833968
+   scf:  143   547801.601470   147175.651613   147175.626340111.272690-22.714272**********
+   scf:  144   887539.392672   198160.177393   198160.161739129.278150-28.801566**********
+   scf:  145   200301.962253    27746.688969    27746.666022126.546564-70.369765895.020577
+   scf:  146   551855.105713   147408.746606   147408.728965113.151842-22.465891**********
+   scf:  147   848546.081433   187137.638561   187137.627732124.156175-28.482288**********
+   scf:  148   203326.706319    28159.802997    28159.785849121.403324-69.278281894.679705
+   scf:  149   550835.414734   148021.814440   148021.757154115.303135-22.352399**********
+   scf:  150   887630.659864   197806.526495   197806.508313129.628451-28.042025**********
+   scf:  151   199257.636927    27456.321529    27456.299340126.821718-70.161409890.863364
+   scf:  152   553196.416030   147885.342821   147885.333917115.069259-22.410125**********
+   scf:  153   847965.998299   186907.430936   186907.420130124.378065-28.368584**********
+   scf:  154   203978.851268    28312.313733    28312.293577121.601081-69.337611897.531815
+   scf:  155   557697.828421   150506.153430   150506.141597128.007937-22.289367**********
+   scf:  156   893920.448999   198883.089131   198883.081705130.914057-27.764403**********
+   scf:  157   198227.713594    27395.821970    27395.804698127.981754-70.311075892.856697
+   scf:  158   561156.586855   149964.636805   149964.616665121.152074-22.583826**********
+   scf:  159   846639.636787   186197.846482   186197.829922123.887985-28.229323**********
+   scf:  160   205706.140513    28614.074335    28614.054906121.118999-69.679912907.473854
+   scf:  161   550355.900286   148122.065725   148122.013248114.937952-22.517965**********
+   scf:  162   887542.969914   197770.762412   197770.741010129.334586-28.430546**********
+   scf:  163   201065.579670    27855.967004    27855.935798126.533854-70.128386894.528965
+   scf:  164   552883.748895   147820.609293   147820.592021116.048705-22.345532**********
+   scf:  165   850327.830382   187727.754057   187727.738912124.786675-28.511482**********
+   scf:  166   203366.502203    28214.695405    28214.678202122.021479-69.550456897.646775
+   scf:  167   555811.758774   149714.891955   149714.859682119.655108-22.373304**********
+   scf:  168   891878.913040   198411.309604   198411.293329130.362747-27.832351**********
+   scf:  169   197593.619905    27183.081600    27183.067929127.475596-70.213758889.854243
+   scf:  170   554981.171993   148216.401562   148216.395560115.321074-22.536954**********
+   scf:  171   845865.337999   186164.558881   186164.540287124.069771-28.158382**********
+   scf:  172   204476.297113    28325.690417    28325.667774121.306254-69.219962897.285548
+   scf:  173   548537.886386   147388.159231   147388.130358114.726384-22.379763**********
+   scf:  174   885015.288728   197358.124654   197358.099913128.963256-28.324085**********
+   scf:  175   203204.722896    28173.459070    28173.431638126.210280-70.110172894.905381
+   scf:  176   551920.063522   147788.290504   147788.270777116.871006-22.217356**********
+   scf:  177   853288.065005   188715.252330   188715.225727125.170217-28.911433**********
+   scf:  178   199364.658358    27637.243144    27637.229329122.391010-69.980231898.288516
+   scf:  179   559512.662645   150394.150643   150394.149000123.956518-22.461266**********
+   scf:  180   859397.294634   189046.892765   189046.863245127.355806-27.840751**********
+   scf:  181   201866.352261    28014.343390    28014.325460124.438596-69.166260893.490874
+   scf:  182   552201.736145   147760.764698   147760.745442118.743427-22.640274**********
+   scf:  183   879963.864343   195915.872938   195915.848680128.948527-27.883520**********
+   scf:  184   205765.343718    28330.046553    28330.032502126.225610-70.120289893.012567
+   scf:  185   547123.938916   146959.707050   146959.697094112.684444-22.111549**********
+   scf:  186   883079.936099   196932.107814   196932.080921128.185045-28.976663**********
+   scf:  187   197113.101974    27204.963518    27204.949161125.445124-70.381661892.183265
+   scf:  188   554017.121027   147938.127990   147938.122957113.809804-22.393953**********
+   scf:  189   846084.993600   186226.937741   186226.923160123.968221-28.188437**********
+   scf:  190   204238.366703    28312.853876    28312.828156121.183046-69.132348897.120678
+   scf:  191   557503.187858   150604.427093   150604.421817129.268776-22.182729**********
+   scf:  192   894606.906458   199098.246124   199098.240759131.229938-27.738904**********
+   scf:  193   198924.493931    27594.749860    27594.734169128.285241-70.295402894.885360
+   scf:  194   565036.973740   151073.945564   151073.931370123.717498-22.609898**********
+   scf:  195   847874.482958   186480.559194   186480.547870124.946824-28.247347**********
+   scf:  196   209073.877220    29285.804297    29285.791141121.419364-69.942567916.291553
+   scf:  197   546607.163296   146911.451338   146911.445883111.161675-22.709004**********
+   scf:  198   887876.771072   198419.576796   198419.564316129.362076-28.965956**********
+   scf:  199   200626.235204    27893.004850    27892.981896126.648775-70.460963897.200535
+   scf:  200   553763.604378   147884.324317   147884.316431114.176635-22.512004**********
+   scf:  201   848819.999182   187160.154981   187160.145468123.902982-28.472156**********
+   scf:  202   203655.878038    28210.144144    28210.123166121.157908-69.387806897.005052
+   scf:  203   552979.391613   148891.729118   148891.678212117.046860-22.343147**********
+   scf:  204   890451.286107   198275.085569   198275.067500130.114237-27.973939**********
+   scf:  205   197538.551685    27238.115891    27238.099108127.258699-70.177379890.713574
+   scf:  206   556612.111096   148651.895979   148651.882035117.606033-22.506532**********
+   scf:  207   845959.318736   186157.769648   186157.752096124.240038-28.107138**********
+   scf:  208   204965.998232    28411.810644    28411.788648121.451785-69.318720899.517770
+   scf:  209   552397.419953   148861.512697   148861.448272120.366337-22.357488**********
+   scf:  210   889687.710728   198220.860538   198220.843015129.879511-28.199938**********
+   scf:  211   200354.012914    27790.511781    27790.486536127.034413-70.217209895.103484
+   scf:  212   557853.335183   149160.748170   149160.728132120.117074-22.471596**********
+   scf:  213   849424.455668   187242.322732   187242.314274124.379763-28.408106**********
+   scf:  214   204823.598951    28488.490617    28488.467731121.609172-69.746724904.548660
+   scf:  215   556712.538812   150208.138126   150208.120436124.346703-22.404397**********
+   scf:  216   893434.182002   198731.384166   198731.376039130.637001-27.997470**********
+   scf:  217   197226.078264    27229.607305    27229.589211127.717558-70.289844891.811775
+   scf:  218   557305.138187   148713.456116   148713.432707116.643452-22.610960**********
+   scf:  219   844547.933094   185723.062710   185723.040628123.811973-28.085318**********
+   scf:  220   205016.431714    28391.024909    28391.006228121.069777-69.281849899.891627
+   scf:  221   547220.205114   147075.380582   147075.371323113.986287-22.403383**********
+   scf:  222   884434.741464   197281.189754   197281.164398128.694885-28.470258**********
+   scf:  223   202900.709412    28164.275461    28164.247546125.960232-70.102669895.360226
+   scf:  224   552270.330261   147832.550884   147832.530247117.631672-22.222209**********
+   scf:  225   852999.134200   188628.909605   188628.882914125.157408-28.835426**********
+   scf:  226   200464.770281    27797.128935    27797.108889122.383084-69.924610898.456608
+   scf:  227   558927.703254   150342.900275   150342.898827124.212863-22.410264**********
+   scf:  228   871468.909155   192405.095793   192405.069122129.423049-27.826484**********
+   scf:  229   201968.818508    27955.651049    27955.641022126.501107-69.435504892.412991
+   scf:  230   551697.215918   147636.111715   147636.093152117.380171-22.511473**********
+   scf:  231   864292.507744   191699.689321   191699.661035128.185975-28.380615**********
+   scf:  232   204021.420963    28265.424794    28265.415653125.446759-69.941274896.654170
+   scf:  233   548468.840916   146971.016276   146971.004884111.647780-22.522468**********
+   scf:  234   880019.137700   195945.016829   195944.991474127.924181-28.530755**********
+   scf:  235   200126.493754    27494.967076    27494.936413125.184124-70.041050889.790802
+   scf:  236   549104.743818   146985.848725   146985.831977112.839156-22.180093**********
+   scf:  237   849323.883795   187458.512577   187458.499615124.519891-28.621109**********
+   scf:  238   202328.377689    28147.464619    28147.447974121.742807-69.265144895.529139
+   scf:  239   559659.789325   150770.787891   150770.786637128.802678-22.206241**********
+   scf:  240   891498.505734   198173.830224   198173.807552130.910229-27.516066**********
+   scf:  241   200023.139634    27545.139076    27545.114645127.968247-70.257768891.991636
+   scf:  242   553458.244729   147951.202050   147951.196177113.592542-22.616425**********
+   scf:  243   848344.920312   186983.870552   186983.859764124.290417-28.481598**********
+   scf:  244   203843.663082    28303.551936    28303.530738121.523599-69.384692898.432384
+   scf:  245   550124.399865   147679.397273   147679.357493114.904434-22.445017**********
+   scf:  246   885341.926056   197321.254790   197321.232346129.133505-28.180608**********
+   scf:  247   202520.790469    27960.224317    27960.193642126.357152-70.111533892.620794
+   scf:  248   550187.827165   147328.839464   147328.820977114.388828-22.224443**********
+   scf:  249   851982.300010   188318.151051   188318.126790124.684910-28.876685**********
+   scf:  250   199748.153437    27706.826696    27706.807379121.909124-69.709514896.248988
+   scf:  251   559815.140507   150541.695772   150541.695135126.006389-22.355082**********
+   scf:  252   866564.293662   191099.696527   191099.668943128.883695-27.775340**********
+   scf:  253   202226.596725    28032.917681    28032.907194125.962144-69.422834893.791678
+   scf:  254   552164.770064   147762.888000   147762.867901117.013218-22.620787**********
+   scf:  255   869531.777931   193063.876808   193063.848690128.411395-28.269955**********
+   scf:  256   204634.270487    28297.344227    28297.322788125.677210-69.986904896.094071
+   scf:  257   548075.093875   146991.905527   146991.895933112.267743-22.354706**********
+   scf:  258   881566.525091   196433.275631   196433.250385128.052302-28.683501**********
+   scf:  259   198261.605432    27236.634424    27236.624664125.318752-70.260837889.934513
+   scf:  260   550099.808379   147059.360497   147059.342215112.277876-22.301181**********
+   scf:  261   847172.620673   186712.594756   186712.582200124.216639-28.396280**********
+   scf:  262   203142.346982    28190.260057    28190.244520121.432464-69.080811893.870706
+   scf:  263   558565.709382   150697.192724   150697.187374129.501843-22.174960**********
+   scf:  264   894218.365257   198980.354593   198980.347259131.176188-27.541596**********
+   scf:  265   199672.767123    27602.743854    27602.725553128.231746-70.288123893.486767
+   scf:  266   560387.100382   149863.111185   149863.090401120.869039-22.576515**********
+   scf:  267   848395.135938   186781.447558   186781.438176124.156239-28.401017**********
+   scf:  268   205420.776639    28617.029966    28617.006088121.380497-69.809745908.586803
+   scf:  269   554376.111329   149437.542011   149437.493026118.120153-22.518628**********
+   scf:  270   891175.363653   198340.876888   198340.863809130.127688-28.196577**********
+   scf:  271   198255.679851    27380.686150    27380.667237127.255578-70.225653892.494595
+   scf:  272   554992.959470   148184.517489   148184.510382115.721994-22.519321**********
+   scf:  273   846879.094870   186524.063241   186524.050857124.444186-28.173981**********
+   scf:  274   204540.200497    28318.740850    28318.715638121.682368-69.311242897.059137
+   scf:  275   548082.174539   147242.375018   147242.346188113.645397-22.427832**********
+   scf:  276   884956.991457   197325.985126   197325.961484128.948606-28.362760**********
+   scf:  277   201879.491200    27946.597137    27946.565374126.192794-70.081139893.571096
+   scf:  278   552215.711062   147786.457443   147786.439135116.664158-22.239583**********
+   scf:  279   851458.898986   188109.449600   188109.428470124.754776-28.695304**********
+   scf:  280   202530.331251    28146.012514    28145.992272121.980361-69.658627898.950562
+   scf:  281   558656.579199   150473.047870   150473.047123126.460574-22.294827**********
+   scf:  282   889928.397915   197644.456450   197644.430185130.408666-27.708889**********
+   scf:  283   198761.154827    27322.588130    27322.569106127.479263-70.144888890.087201
+   scf:  284   552711.161512   147684.347803   147684.335258113.580482-22.564880**********
+   scf:  285   847318.701922   186703.132622   186703.119254124.389939-28.324938**********
+   scf:  286   203938.631590    28277.573874    28277.551061121.628629-69.245051895.971023
+   scf:  287   548605.956087   147219.087037   147219.070440114.261808-22.433428**********
+   scf:  288   884212.843913   197171.825264   197171.802376128.913111-28.247059**********
+   scf:  289   203435.775290    28138.211397    28138.182847126.170982-70.099569893.530329
+   scf:  290   550283.851542   147418.371171   147418.351462115.217425-22.172125**********
+   scf:  291   853768.633569   188890.225783   188890.198995125.163004-29.000017**********
+   scf:  292   197714.948409    27390.389174    27390.384681122.382414-69.989336896.491280
+   scf:  293   560463.445923   150501.470619   150501.468796124.010355-22.500227**********
+   scf:  294   854993.095076   187736.232563   187736.218563126.885475-27.611396**********
+   scf:  295   202371.729961    28050.724062    28050.705431123.975846-68.973318892.155454
+   scf:  296   552263.112262   148009.111978   148009.079206120.959079-22.588276**********
+   scf:  297   884121.997310   197053.010959   197052.996963129.568216-27.829799**********
+   scf:  298   205664.750534    28356.803645    28356.788519126.830909-70.223231893.350311
+   scf:  299   547860.096514   147053.043794   147053.031188112.496662-22.209545**********
+   scf:  300   874463.069266   194547.511738   194547.476389128.016377-29.099680**********
+   scf:  301   196930.717934    27173.774982    27173.768327125.267478-70.260780892.936962
+   scf:  302   552596.582869   147519.260396   147519.252073112.875926-22.494039**********
+   scf:  303   845346.478240   186025.583409   186025.560523123.799725-28.157600**********
+   scf:  304   203887.135479    28257.658827    28257.634266121.008182-68.966819894.711478
+   scf:  305   557608.766231   150575.241279   150575.219908130.107437-22.131965**********
+   scf:  306   894115.843119   199045.531563   199045.524419131.343025-27.688097**********
+   scf:  307   199888.686561    27733.015459    27732.996875128.192980-70.324161895.450870
+   scf:  308   564107.567827   150899.612296   150899.598300123.465099-22.599157**********
+   scf:  309   848848.280723   186813.603278   186813.594972124.697713-28.389620**********
+   scf:  310   208038.537337    29133.565780    29133.546397121.349574-70.003738915.769652
+   scf:  311   547776.982752   147172.302298   147172.277300111.293826-22.712597**********
+   scf:  312   887512.786480   198154.007609   198153.991844129.272739-28.803405**********
+   scf:  313   200356.860642    27757.690829    27757.667489126.541348-70.366338895.086336
+   scf:  314   551879.942799   147418.821683   147418.804098113.204340-22.462684**********
+   scf:  315   848621.947725   187162.448453   187162.437680124.167082-28.486196**********
+   scf:  316   203315.170345    28159.238155    28159.221042121.414320-69.287202894.764962
+   scf:  317   551026.065263   148088.483874   148088.425966115.398245-22.353779**********
+   scf:  318   887833.665353   197838.116047   197838.097848129.667620-28.031002**********
+   scf:  319   199110.364916    27432.382516    27432.361066126.857099-70.163862890.765377
+   scf:  320   553337.365238   147911.912186   147911.903743115.117978-22.417961**********
+   scf:  321   847802.381990   186849.941851   186849.930828124.363441-28.350034**********
+   scf:  322   204041.070856    28317.370158    28317.349115121.586288-69.327936897.524870
+   scf:  323   557574.161310   150482.102408   150482.088035127.913106-22.292792**********
+   scf:  324   893880.216104   198882.100288   198882.092857130.906165-27.778134**********
+   scf:  325   198257.970180    27408.763048    27408.746028127.975151-70.309448893.023234
+   scf:  326   561541.137718   150074.617868   150074.599029121.539011-22.584309**********
+   scf:  327   846710.768172   186209.901022   186209.884797123.882371-28.230288**********
+   scf:  328   205861.001734    28646.687407    28646.668224121.115147-69.709261908.148832
+   scf:  329   550031.234351   148011.564506   148011.514041114.537973-22.536203**********
+   scf:  330   887346.323858   197749.203900   197749.182308129.286520-28.465231**********
+   scf:  331   201186.676495    27876.375465    27876.344181126.493113-70.128960894.619133
+   scf:  332   552646.037142   147760.784190   147760.766069115.922433-22.335916**********
+   scf:  333   850471.864916   187783.635408   187783.619273124.808516-28.532231**********
+   scf:  334   203231.217000    28193.328286    28193.310600122.042557-69.552267897.423312
+   scf:  335   555888.816440   149720.896155   149720.864413119.702901-22.370651**********
+   scf:  336   891771.410130   198371.149076   198371.132378130.349432-27.816819**********
+   scf:  337   197649.571493    27181.253079    27181.239868127.463028-70.202368889.653587
+   scf:  338   554691.232704   148148.603640   148148.597775115.147130-22.528196**********
+   scf:  339   845981.864462   186212.035627   186212.017678124.096838-28.170658**********
+   scf:  340   204418.923642    28319.782529    28319.759164121.333936-69.217020897.064304
+   scf:  341   548649.477707   147409.980822   147409.950856114.771938-22.380255**********
+   scf:  342   885053.680105   197362.813353   197362.788700128.982939-28.310230**********
+   scf:  343   203230.333541    28172.505287    28172.477856126.228856-70.111312894.832699
+   scf:  344   551835.445898   147770.146877   147770.127153116.729865-22.216700**********
+   scf:  345   853307.927938   188722.223542   188722.196937125.167294-28.918927**********
+   scf:  346   199231.777246    27616.943103    27616.930263122.387732-69.982369898.192727
+   scf:  347   559579.833440   150400.711938   150400.710293123.951186-22.465226**********
+   scf:  348   858195.263097   188714.083119   188714.055244127.283101-27.840137**********
+   scf:  349   201856.943674    28019.757210    28019.737886124.366516-69.140313893.587176
+   scf:  350   552298.126926   147789.574583   147789.554156118.907322-22.654213**********
+   scf:  351   881195.579733   196247.177783   196247.156550128.991659-27.843291**********
+   scf:  352   205877.817710    28334.264858    28334.250627126.269330-70.139233892.759515
+   scf:  353   547060.589913   146964.145589   146964.135702112.770444-22.091201**********
+   scf:  354   883630.717447   197087.018266   197086.992466128.221300-28.993285**********
+   scf:  355   197087.489589    27209.016363    27209.000810125.481592-70.392524892.230863
+   scf:  356   554381.596483   148035.617528   148035.612167114.012676-22.388223**********
+   scf:  357   846106.569797   186219.948689   186219.934359123.966762-28.184460**********
+   scf:  358   204312.595689    28326.244026    28326.218251121.182109-69.151316897.672697
+   scf:  359   557456.725951   150597.990193   150597.985271129.187401-22.187155**********
+   scf:  360   894621.639539   199100.306031   199100.300835131.233994-27.751828**********
+   scf:  361   198902.491276    27594.723071    27594.707303128.289475-70.294216894.939020
+   scf:  362   565017.775392   151061.803590   151061.789487123.704671-22.611066**********
+   scf:  363   847856.546750   186477.619102   186477.607774124.933768-28.240313**********
+   scf:  364   208983.303863    29264.737950    29264.724649121.437891-69.942879916.087301
+   scf:  365   546584.362916   146904.202658   146904.197123111.106623-22.710055**********
+   scf:  366   887735.021388   198371.456096   198371.442912129.322971-28.961177**********
+   scf:  367   200625.981596    27888.633465    27888.610263126.609382-70.445906897.062395
+   scf:  368   553648.502446   147858.873243   147858.864649114.188136-22.502304**********
+   scf:  369   848860.207728   187179.735129   187179.725560123.940787-28.471234**********
+   scf:  370   203632.814878    28207.120205    28207.099681121.195251-69.387859896.885001
+   scf:  371   553112.356485   148934.020621   148933.970754117.148275-22.342049**********
+   scf:  372   890566.561687   198294.013267   198293.995312130.140502-27.963083**********
+   scf:  373   197522.026711    27235.033436    27235.016674127.282642-70.177857890.695419
+   scf:  374   556739.945153   148687.294869   148687.280215117.732586-22.508014**********
+   scf:  375   845930.583263   186143.451856   186143.434100124.227345-28.105759**********
+   scf:  376   204986.566112    28416.542346    28416.520553121.439522-69.324428899.702487
+   scf:  377   552279.976277   148820.115163   148820.050902120.206756-22.360444**********
+   scf:  378   889554.068518   198196.465334   198196.447511129.849048-28.210501**********
+   scf:  379   200480.664489    27809.960033    27809.933821127.006521-70.214047895.170869
+   scf:  380   557463.573046   149057.431808   149057.412216119.695652-22.467354**********
+   scf:  381   849562.290338   187300.760411   187300.751719124.412878-28.420513**********
+   scf:  382   204690.462690    28464.835736    28464.813523121.642767-69.735803904.044323
+   scf:  383   556815.095984   150223.606867   150223.590030124.522845-22.397333**********
+   scf:  384   893415.318281   198720.414234   198720.405697130.622850-27.976571**********
+   scf:  385   197234.195621    27220.635210    27220.617258127.703309-70.291084891.630559
+   scf:  386   557110.168725   148683.907679   148683.890411116.489019-22.602668**********
+   scf:  387   844909.750930   185814.665136   185814.643392123.965405-28.079281**********
+   scf:  388   204919.587410    28371.741460    28371.722636121.212204-69.267171899.199392
+   scf:  389   547236.090383   147061.175842   147061.167622113.924306-22.412800**********
+   scf:  390   884318.310016   197247.884442   197247.859160128.729768-28.455014**********
+   scf:  391   202983.103987    28169.422051    28169.394283125.994338-70.092978895.215616
+   scf:  392   552137.281496   147811.628233   147811.607273117.697865-22.209267**********
+   scf:  393   853137.001742   188677.628218   188677.601679125.212667-28.855688**********
+   scf:  394   200076.005932    27737.494844    27737.476634122.436544-69.952303898.281973
+   scf:  395   559083.874337   150347.616646   150347.615056124.001847-22.430462**********
+   scf:  396   866923.445557   191139.617580   191139.587249128.662188-27.866219**********
+   scf:  397   201939.394901    27982.525375    27982.514350125.742122-69.330693892.839075
+   scf:  398   551928.156594   147691.105876   147691.086979117.966778-22.559714**********
+   scf:  399   867722.477543   192616.651503   192616.632821128.558765-28.264730**********
+   scf:  400   204484.838177    28291.102948    28291.087037125.824666-69.975032895.990786
+   scf:  401   548165.540859   146976.881613   146976.871437111.889709-22.424345**********
+   scf:  402   882087.650490   196555.005808   196554.983073128.086914-28.613106**********
+   scf:  403   198900.894351    27313.172533    27313.153519125.352807-70.196561889.557057
+   scf:  404   549654.439367   147013.834289   147013.815644112.375057-22.250123**********
+   scf:  405   847890.352837   186962.768788   186962.756815124.328989-28.481242**********
+   scf:  406   202877.646679    28177.173700    28177.159709121.547566-69.137608894.349209
+   scf:  407   558906.459108   150715.115831   150715.111946129.279044-22.187645**********
+   scf:  408   893981.995204   198897.233226   198897.225638131.116924-27.507058**********
+   scf:  409   199709.814467    27563.379314    27563.359508128.173451-70.289825892.768535
+   scf:  410   557172.984808   148953.364989   148953.346265117.084695-22.577308**********
+   scf:  411   848279.112752   186843.526475   186843.516652124.273295-28.406576**********
+   scf:  412   204618.495413    28442.824805    28442.798538121.500666-69.585598903.509426
+   scf:  413   553916.687938   149190.970463   149190.913129118.994870-22.451959**********
+   scf:  414   890044.205170   198141.618842   198141.601664129.918419-28.111101**********
+   scf:  415   199011.334632    27466.292376    27466.271583127.061667-70.224459892.354302
+   scf:  416   554097.806788   148041.830537   148041.822403115.277845-22.477265**********
+   scf:  417   847692.395691   186800.664515   186800.653646124.323282-28.309683**********
+   scf:  418   204171.627703    28303.334343    28303.310374121.562077-69.352282897.317905
+   scf:  419   551614.681075   148407.969435   148407.908323116.199178-22.393589**********
+   scf:  420   888492.997840   197961.454390   197961.433981129.709231-28.122011**********
+   scf:  421   199680.927570    27582.358280    27582.335497126.883475-70.173707892.449806
+   scf:  422   554413.351251   148205.984422   148205.976453116.166306-22.437647**********
+   scf:  423   848513.554888   187053.750227   187053.740361124.419753-28.373910**********
+   scf:  424   204158.834193    28342.641799    28342.620931121.647598-69.453205899.105296
+   scf:  425   557152.669059   150329.234654   150329.215220126.105587-22.339370**********
+   scf:  426   893543.928841   198792.852554   198792.843931130.756066-27.841105**********
+   scf:  427   197807.471023    27320.453544    27320.435454127.833353-70.303447892.320353
+   scf:  428   560134.740066   149640.176163   149640.153833120.169383-22.578645**********
+   scf:  429   846030.759960   186040.055718   186040.036858123.872954-28.171790**********
+   scf:  430   205416.125434    28531.869141    28531.849679121.102933-69.559244905.027688
+   scf:  431   549757.244621   147926.076502   147926.027542114.871521-22.473374**********
+   scf:  432   886823.194646   197645.622855   197645.599679129.193538-28.417937**********
+   scf:  433   201809.870544    27980.130722    27980.099759126.403792-70.111593894.945595
+   scf:  434   552730.593091   147845.061200   147845.042592116.655526-22.305117**********
+   scf:  435   851384.689021   188082.400892   188082.379697124.856040-28.634841**********
+   scf:  436   202805.215358    28150.258130    28150.238633122.088925-69.668352898.474837
+   scf:  437   557863.753947   150296.997384   150296.987451125.285220-22.349247**********
+   scf:  438   892039.959963   198245.940618   198245.923826130.421677-27.735122**********
+   scf:  439   198097.021990    27216.305813    27216.290908127.507079-70.180575889.220085
+   scf:  440   553388.251101   147835.797809   147835.788564114.049219-22.524266**********
+   scf:  441   846675.554343   186476.654504   186476.639699124.309599-28.253519**********
+   scf:  442   204126.450408    28287.337076    28287.311746121.551841-69.216594896.134367
+   scf:  443   548161.564328   147141.707432   147141.695746114.136515-22.427031**********
+   scf:  444   884139.357863   197176.877121   197176.853094128.860857-28.290388**********
+   scf:  445   203515.821950    28178.032387    28178.004834126.123801-70.090899894.075652
+   scf:  446   550702.255783   147519.183749   147519.163094115.955867-22.168112**********
+   scf:  447   853913.143754   188939.333300   188939.307958125.303088-28.993101**********
+   scf:  448   197850.359825    27408.087081    27408.082722122.522523-70.035995896.952683
+   scf:  449   560288.321087   150460.099309   150460.096919123.592844-22.511521**********
+   scf:  450   854995.428712   187731.280674   187731.266769126.818273-27.643279**********
+   scf:  451   202289.500195    28041.932605    28041.913892123.908707-68.959916892.094923
+   scf:  452   551993.330184   147895.995548   147895.968056120.724812-22.590372**********
+   scf:  453   883718.920926   196973.707307   196973.692549129.480561-27.827300**********
+   scf:  454   205727.508745    28358.305509    28358.290658126.749900-70.216326893.209987
+   scf:  455   547734.301492   147039.512014   147039.499889112.520520-22.192090**********
+   scf:  456   876562.418646   195124.053816   195124.016364127.994636-29.085150**********
+   scf:  457   197003.279941    27177.076553    27177.068479125.248820-70.293400892.693163
+   scf:  458   552641.545493   147544.093830   147544.086152112.889991-22.461928**********
+   scf:  459   845604.312466   186109.317432   186109.297041123.860673-28.174939**********
+   scf:  460   203899.078007    28260.437199    28260.412467121.070340-68.999734894.981087
+   scf:  461   557767.955109   150637.171735   150637.157703129.950968-22.141267**********
+   scf:  462   894378.995789   199078.017294   199078.010763131.194500-27.674309**********
+   scf:  463   199568.137741    27681.060056    27681.042931128.255357-70.312262895.149548
+   scf:  464   564440.357151   150969.362531   150969.348476123.546348-22.603836**********
+   scf:  465   848527.688355   186701.252075   186701.242904124.777956-28.346146**********
+   scf:  466   208394.783672    29188.867683    29188.849979121.362290-69.983386916.059803
+   scf:  467   547185.235097   147007.700597   147007.686339111.074698-22.721531**********
+   scf:  468   887398.612980   198201.913076   198201.897893129.243883-28.868875**********
+   scf:  469   200656.112763    27831.704688    27831.680158126.523067-70.391439895.824613
+   scf:  470   552171.123469   147499.500727   147499.484449113.368523-22.467348**********
+   scf:  471   848914.922793   187246.785428   187246.774980124.076842-28.511308**********
+   scf:  472   203265.427883    28154.460820    28154.442995121.327357-69.324783895.290653
+   scf:  473   552040.091998   148457.776656   148457.718445116.073941-22.350291**********
+   scf:  474   888952.095331   198011.833701   198011.815230129.877727-27.973642**********
+   scf:  475   198394.888918    27324.361075    27324.343144127.046642-70.168499890.396618
+   scf:  476   554215.804634   148087.449276   148087.442602115.548456-22.458495**********
+   scf:  477   847007.475871   186566.859193   186566.846256124.331851-28.250890**********
+   scf:  478   204369.122754    28343.338795    28343.313865121.551144-69.290075897.674232
+   scf:  479   556267.725581   150113.689549   150113.650466126.269183-22.315321**********
+   scf:  480   892996.574061   198761.529400   198761.520242130.682774-27.895281**********
+   scf:  481   198666.001712    27504.573445    27504.557201127.771588-70.293529893.855447
+   scf:  482   562051.638574   150243.646874   150243.631585122.495757-22.565165**********
+   scf:  483   847395.911878   186424.281301   186424.268900123.920945-28.264223**********
+   scf:  484   206247.214992    28734.292566    28734.272817121.160805-69.797870909.634444
+   scf:  485   551087.963305   148402.709495   148402.651834115.086555-22.555459**********
+   scf:  486   889077.997626   198104.895844   198104.878774129.693032-28.451236**********
+   scf:  487   199609.802521    27646.860476    27646.838064126.879346-70.187992894.156441
+   scf:  488   554377.201808   148087.780447   148087.770695115.944443-22.449638**********
+   scf:  489   848522.063229   187084.450271   187084.440353124.770304-28.295505**********
+   scf:  490   204241.546754    28303.599754    28303.578831121.992670-69.429170897.630852
+   scf:  491   552187.615575   148648.485881   148648.430988116.090453-22.411094**********
+   scf:  492   889754.449181   198187.402668   198187.384082129.916505-28.088016**********
+   scf:  493   197969.821230    27310.647335    27310.629581127.078671-70.208502891.309056
+   scf:  494   556077.770442   148536.686715   148536.675178117.157373-22.500890**********
+   scf:  495   846453.714405   186332.137234   186332.122434124.040815-28.166883**********
+   scf:  496   204758.390904    28389.230512    28389.206592121.273690-69.338743899.193960
+   scf:  497   555495.108914   149946.216079   149946.171034125.136468-22.330161**********
+   scf:  498   892633.930795   198693.794066   198693.784007130.581128-28.003812**********
+   scf:  499   198622.958112    27534.627194    27534.611123127.675754-70.268218894.350782
+   scf:  500   562917.260872   150467.956067   150467.943534123.246191-22.560849**********
+   scf:  501   847546.182876   186459.163899   186459.152643124.476812-28.225069**********
+   scf:  502   207258.971945    28917.914780    28917.896085121.351445-69.834352911.335554
+   scf:  503   547418.301649   147122.710241   147122.687163111.640616-22.650204**********
+   scf:  504   886478.728256   197836.738285   197836.717525129.055542-28.742987**********
+   scf:  505   201223.071114    27907.616222    27907.586226126.322040-70.242630895.323825
+   scf:  506   552062.932175   147562.007366   147561.989476114.497781-22.366738**********
+   scf:  507   850072.881628   187653.884395   187653.870732124.470617-28.557064**********
+   scf:  508   202986.180003    28137.826875    28137.808544121.712804-69.456636896.214867
+   scf:  509   555404.948175   149568.383125   149568.348856118.679091-22.332897**********
+   scf:  510   891511.433447   198344.163478   198344.146256130.360375-27.791676**********
+   scf:  511   197709.281927    27201.073055    27201.058380127.475061-70.172600889.738179
+   scf:  512   555058.333863   148254.588051   148254.581516115.635004-22.522302**********
+   scf:  513   846160.611461   186262.370185   186262.353303124.244365-28.160963**********
+   scf:  514   204539.508761    28343.916813    28343.893257121.474408-69.253167897.755048
+   scf:  515   549945.202946   147884.604952   147884.555463116.628138-22.373185**********
+   scf:  516   886499.194389   197625.686534   197625.662921129.281305-28.267668**********
+   scf:  517   202677.140385    28100.474807    28100.446140126.495008-70.140026895.063307
+   scf:  518   552902.348937   147996.779983   147996.764940116.850038-22.285072**********
+   scf:  519   852384.070163   188381.874971   188381.850100124.858512-28.810054**********
+   scf:  520   201719.715473    28022.480375    28022.460418122.082997-69.820734900.139393
+   scf:  521   558853.275832   150427.848557   150427.847706125.369367-22.355212**********
+   scf:  522   879126.952335   194612.541688   194612.503894129.931118-27.910333**********
+   scf:  523   199990.953411    27591.229537    27591.207420127.003996-69.838203891.777090
+   scf:  524   552234.264917   147614.697215   147614.679382114.790002-22.593689**********
+   scf:  525   849140.932053   187348.064282   187348.053599124.664668-28.355240**********
+   scf:  526   203723.361603    28287.394963    28287.378900121.909861-69.418115896.605307
+   scf:  527   552929.709843   148614.560063   148614.499720118.743645-22.442713**********
+   scf:  528   887797.004689   197737.294715   197737.275732129.656771-28.059312**********
+   scf:  529   200837.231283    27683.494730    27683.464527126.830847-70.196063891.775609
+   scf:  530   551534.019609   147557.996735   147557.981148113.838404-22.374643**********
+   scf:  531   849492.091331   187440.173391   187440.162153124.366624-28.633041**********
+   scf:  532   202982.500679    28203.469747    28203.452692121.594794-69.402584897.221656
+   scf:  533   557309.059303   150109.356576   150109.319811124.480802-22.347497**********
+   scf:  534   892178.201751   198485.056586   198485.043322130.538355-27.699526**********
+   scf:  535   198763.787953    27348.696085    27348.677145127.637085-70.275855890.859935
+   scf:  536   553985.788402   148030.154012   148030.148305114.195200-22.554722**********
+   scf:  537   847077.788808   186568.125611   186568.111753124.110249-28.342362**********
+   scf:  538   204113.223306    28306.846681    28306.821177121.347306-69.283245897.599442
+   scf:  539   549162.325106   147471.050900   147471.017737114.679826-22.408869**********
+   scf:  540   885047.968143   197321.549625   197321.525483129.027260-28.247434**********
+   scf:  541   203035.953454    28093.862949    28093.834322126.266836-70.103135893.805614
+   scf:  542   550852.831841   147514.895551   147514.875474115.472093-22.207728**********
+   scf:  543   852939.274296   188623.935905   188623.908846125.017452-28.918530**********
+   scf:  544   198838.380393    27551.631648    27551.620533122.238440-69.898791896.803047
+   scf:  545   559844.910986   150454.827945   150454.826739124.577856-22.441886**********
+   scf:  546   857076.392967   188411.055848   188411.031741127.351505-27.780017**********
+   scf:  547   201986.610331    28041.627570    28041.607818124.435918-69.126601893.713628
+   scf:  548   552977.665793   148049.880925   148049.846985119.823397-22.660554**********
+   scf:  549   882698.127039   196602.625349   196602.606867129.230785-27.810484**********
+   scf:  550   205876.133147    28342.174487    28342.159636126.496501-70.178509893.031106
+   scf:  551   547211.188552   146977.339665   146977.329426112.573776-22.127102**********
+   scf:  552   881965.130982   196617.680133   196617.653428128.131860-29.028092**********
+   scf:  553   197069.793125    27194.994038    27194.980359125.390207-70.365177892.359652
+   scf:  554   553618.434915   147821.985758   147821.980528113.520548-22.395914**********
+   scf:  555   846023.153571   186220.623261   186220.608014123.999802-28.184468**********
+   scf:  556   204128.191391    28291.706225    28291.680561121.211283-69.103313896.459096
+   scf:  557   557514.638220   150595.396072   150595.387676129.344888-22.184963**********
+   scf:  558   894520.936606   199084.368336   199084.362564131.200812-27.724056**********
+   scf:  559   198992.947272    27599.472722    27599.457159128.258500-70.297807894.840053
+   scf:  560   564919.605970   151053.100034   151053.085910123.697218-22.607044**********
+   scf:  561   847941.018901   186503.163225   186503.152199124.927236-28.262451**********
+   scf:  562   209036.714543    29284.815545    29284.801823121.378647-69.942039916.287053
+   scf:  563   546676.678363   146922.086972   146922.080968111.189768-22.709038**********
+   scf:  564   887889.877457   198420.991113   198420.978697129.369939-28.955797**********
+   scf:  565   200688.696642    27898.059256    27898.035916126.656084-70.460026897.159010
+   scf:  566   553620.888481   147851.707002   147851.698610114.069804-22.510541**********
+   scf:  567   848876.724047   187182.095442   187182.085890123.905778-28.483493**********
+   scf:  568   203598.922526    28202.922681    28202.902066121.160389-69.385586896.908896
+   scf:  569   552930.704802   148860.555341   148860.503678116.964382-22.344515**********
+   scf:  570   890324.190233   198249.015809   198248.997580130.095324-27.970324**********
+   scf:  571   197597.563356    27240.344452    27240.327826127.241667-70.175929890.622036
+   scf:  572   556211.546906   148546.730304   148546.718512117.156634-22.504599**********
+   scf:  573   846037.306407   186195.614979   186195.597826124.262601-28.117400**********
+   scf:  574   204878.844289    28396.321304    28396.298755121.474970-69.301430899.026940
+   scf:  575   552584.535966   148914.943692   148914.879144120.726139-22.350884**********
+   scf:  576   889813.790363   198241.856366   198241.839067129.914735-28.177020**********
+   scf:  577   200276.028374    27774.755755    27774.731171127.066554-70.221331894.997297
+   scf:  578   558104.184914   149231.305558   149231.285419120.376071-22.473903**********
+   scf:  579   849328.931910   187200.718116   187200.709783124.340530-28.405559**********
+   scf:  580   204897.159760    28503.973914    28503.950539121.569695-69.754263904.936017
+   scf:  581   556726.488520   150221.651192   150221.633933124.446138-22.407831**********
+   scf:  582   893472.845797   198740.292311   198740.284524130.655646-28.006389**********
+   scf:  583   197244.819935    27237.842783    27237.824627127.735248-70.290430891.931704
+   scf:  584   557243.953121   148664.662668   148664.633395116.513916-22.624937**********
+   scf:  585   844021.790984   185601.440894   185601.419516123.563940-28.105536**********
+   scf:  586   205096.460781    28408.724796    28408.706103120.838889-69.284623900.521009
+   scf:  587   547220.230904   147095.115621   147095.105447114.147145-22.382870**********
+   scf:  588   884604.591910   197334.959983   197334.934648128.653962-28.481762**********
+   scf:  589   202806.550119    28159.626380    28159.598246125.920496-70.120099895.567586
+   scf:  590   552495.875853   147876.060617   147876.040819117.503451-22.241955**********
+   scf:  591   852822.843506   188562.651036   188562.624333125.072769-28.811354**********
+   scf:  592   200995.988517    27881.312030    27881.290814122.300476-69.887993898.834111
+   scf:  593   558739.877745   150341.434587   150341.433291124.496138-22.384773**********
+   scf:  594   874558.328205   193292.885740   193292.865355129.661610-27.858430**********
+   scf:  595   201507.781930    27874.343206    27874.329418126.734870-69.567051892.398136
+   scf:  596   551982.507152   147662.762705   147662.743432116.570488-22.523108**********
+   scf:  597   853949.810543   188836.791485   188836.762728125.442468-28.455109**********
+   scf:  598   203363.193727    28257.445703    28257.431156122.691178-69.730079898.096688
+   scf:  599   556777.312767   149848.705074   149848.660506121.382418-22.490365**********
+   scf:  600   890577.409972   198031.005376   198030.987200130.147937-27.884223**********
+   scf:  601   198788.148748    27290.896161    27290.877976127.264228-70.201932889.268647
+   scf:  602   551722.552107   147458.559225   147458.538574113.293420-22.462531**********
+   scf:  603   847024.988172   186657.516203   186657.501787124.122312-28.426585**********
+   scf:  604   203636.080140    28247.173727    28247.152207121.370859-69.204466895.503368
+   scf:  605   548895.419736   147268.918643   147268.899886114.520962-22.404106**********
+   scf:  606   884413.924124   197232.786754   197232.763906128.976006-28.184660**********
+   scf:  607   203650.546278    28161.024360    28160.996096126.232049-70.114975893.595498
+   scf:  608   550065.967170   147377.416524   147377.397185114.677858-22.186452**********
+   scf:  609   854287.416235   189038.951393   189038.924373125.208704-29.030758**********
+   scf:  610   197460.419563    27356.020523    27356.016468122.428262-70.005401896.478417
+   scf:  611   560671.152099   150527.362835   150527.360818123.963361-22.510115**********
+   scf:  612   854616.612309   187610.764810   187610.753356126.800335-27.570573**********
+   scf:  613   202468.559141    28052.796183    28052.777547123.891798-68.947814891.834838
+   scf:  614   552040.231031   147978.153340   147978.121647121.003397-22.573991**********
+   scf:  615   884256.189061   197105.557138   197105.543341129.592118-27.845645**********
+   scf:  616   205609.636753    28360.529387    28360.514271126.855703-70.228416893.508137
+   scf:  617   548028.254328   147078.654847   147078.641631112.590090-22.221435**********
+   scf:  618   872909.816301   194122.829104   194122.797400128.002404-29.115027**********
+   scf:  619   196920.056737    27175.270685    27175.265267125.251614-70.242636893.147611
+   scf:  620   552434.698649   147468.942163   147468.932853112.745245-22.523358**********
+   scf:  621   845158.929569   185965.828781   185965.804252123.736022-28.151916**********
+   scf:  622   203840.843689    28250.254643    28250.230364120.945328-68.933064894.373094
+   scf:  623   557437.695387   150501.291634   150501.264439130.241234-22.118811**********
+   scf:  624   893822.028601   199007.030140   199007.022249131.476797-27.696745**********
+   scf:  625   200275.010180    27793.048463    27793.027640128.129313-70.333995895.744088
+   scf:  626   563619.257926   150791.428373   150791.414278123.338651-22.591254**********
+   scf:  627   849225.805805   186949.541788   186949.534206124.572435-28.441230**********
+   scf:  628   207551.554528    29055.542206    29055.521491121.351702-70.027005915.256072
+   scf:  629   548874.129223   147508.857157   147508.818129111.913029-22.697100**********
+   scf:  630   888001.862064   198148.933627   198148.917938129.399593-28.699210**********
+   scf:  631   199824.819138    27645.535025    27645.513537126.647280-70.340193894.186860
+   scf:  632   551864.547070   147396.754179   147396.736241113.177019-22.469274**********
+   scf:  633   848093.115236   186993.792151   186993.780790124.295121-28.429092**********
+   scf:  634   203501.981352    28179.735914    28179.718393121.534892-69.241459894.344085
+   scf:  635   549491.684067   147557.685446   147557.639360114.504887-22.361341**********
+   scf:  636   886191.298127   197573.457989   197573.439431129.346531-28.132647**********
+   scf:  637   200402.584102    27643.361607    27643.333968126.566844-70.134920891.603825
+   scf:  638   552158.775066   147693.210502   147693.197042114.828681-22.344396**********
+   scf:  639   849237.200157   187354.923418   187354.912571124.463113-28.514864**********
+   scf:  640   203417.463380    28259.206095    28259.189809121.688687-69.410730897.608718
+   scf:  641   558329.751376   150564.691984   150564.688767128.051793-22.267832**********
+   scf:  642   893734.260852   198786.160943   198786.152298130.855439-27.678937**********
+   scf:  643   198234.977651    27322.102415    27322.083952127.921468-70.308271891.503416
+   scf:  644   556536.591999   148661.210298   148661.196919115.917027-22.587351**********
+   scf:  645   846474.197510   186288.593532   186288.576808124.083773-28.239225**********
+   scf:  646   204655.401985    28381.899644    28381.877304121.317459-69.357162900.343384
+   scf:  647   548826.380679   147475.655770   147475.622073114.485369-22.428528**********
+   scf:  648   885109.073182   197321.177789   197321.152469128.945642-28.348020**********
+   scf:  649   202767.180981    28086.041336    28086.012574126.183166-70.089474894.315706
+   scf:  650   551376.306970   147608.432600   147608.411838116.390169-22.211921**********
+   scf:  651   852712.336332   188552.398723   188552.371818125.049030-28.850106**********
+   scf:  652   199834.436735    27696.330523    27696.312430122.274265-69.865379897.165524
+   scf:  653   559297.865949   150402.833391   150402.832283124.709630-22.402096**********
+   scf:  654   865994.582945   190897.109013   190897.081823128.549508-27.829141**********
+   scf:  655   202016.533527    28002.760170    28002.749053125.631072-69.334873893.163565
+   scf:  656   552147.606422   147755.333667   147755.313585117.980383-22.581921**********
+   scf:  657   869209.196536   193002.126886   193002.099522128.524638-28.233326**********
+   scf:  658   204674.520241    28304.709686    28304.689388125.791521-69.997028896.014113
+   scf:  659   548049.784705   146980.443845   146980.434025112.017385-22.380817**********
+   scf:  660   882208.270082   196604.054002   196604.030620128.090239-28.666919**********
+   scf:  661   198401.955004    27249.492254    27249.480608125.357802-70.254196889.706275
+   scf:  662   549989.868933   147049.068358   147049.049936112.289224-22.282455**********
+   scf:  663   847336.165912   186769.195743   186769.183431124.241282-28.418720**********
+   scf:  664   203074.554617    28185.857796    28185.842690121.457817-69.093355893.981649
+   scf:  665   558629.250229   150696.687852   150696.682690129.438035-22.178929**********
+   scf:  666   894170.651549   198963.838874   198963.831593131.165468-27.532175**********
+   scf:  667   199683.044574    27594.156061    27594.137456128.221234-70.287513893.329476
+   scf:  668   559690.177923   149666.247061   149666.224811120.132701-22.574320**********
+   scf:  669   848376.435602   186796.882990   186796.873563124.184363-28.402463**********
+   scf:  670   205205.647388    28571.614909    28571.590215121.407631-69.763739907.471120
+   scf:  671   554858.552040   149593.242411   149593.195637119.398207-22.494907**********
+   scf:  672   891443.128444   198374.779865   198374.767217130.179083-28.146281**********
+   scf:  673   198189.260085    27366.923999    27366.905190127.300277-70.235469892.411297
+   scf:  674   555218.584488   148247.034195   148247.027517115.827554-22.531029**********
+   scf:  675   846784.033925   186482.000406   186481.987648124.362708-28.171168**********
+   scf:  676   204568.895058    28324.645677    28324.620855121.603511-69.315896897.327791
+   scf:  677   548079.044976   147246.788831   147246.760311113.677394-22.428638**********
+   scf:  678   884904.156035   197310.234701   197310.210726128.922705-28.368661**********
+   scf:  679   202038.165321    27974.795614    27974.764320126.167977-70.076637893.714725
+   scf:  680   552154.441544   147779.376514   147779.357596116.804395-22.230725**********
+   scf:  681   851713.255071   188197.394572   188197.371952124.810475-28.720782**********
+   scf:  682   202287.397673    28108.303891    28108.283301122.035430-69.690258898.958295
+   scf:  683   558729.591955   150462.790690   150462.790024126.197564-22.304512**********
+   scf:  684   887843.920147   197054.705342   197054.676469130.298118-27.772382**********
+   scf:  685   199136.173286    27389.285911    27389.264220127.367939-70.072183890.412186
+   scf:  686   552379.324824   147618.720113   147618.705149113.700978-22.565862**********
+   scf:  687   847843.374614   186892.058807   186892.046744124.490812-28.348413**********
+   scf:  688   203839.449552    28275.170467    28275.150642121.730973-69.285973895.979633
+   scf:  689   549151.856318   147360.927185   147360.901545114.436068-22.439900**********
+   scf:  690   884514.054336   197206.849764   197206.827834128.982810-28.214192**********
+   scf:  691   203244.920586    28090.877287    28090.848339126.231251-70.105977893.138784
+   scf:  692   550135.913932   147372.933111   147372.913915114.782653-22.185810**********
+   scf:  693   853280.823403   188735.717610   188735.690185124.986526-28.983486**********
+   scf:  694   197881.951018    27415.395563    27415.389973122.206028-69.927497896.217527
+   scf:  695   560444.872161   150523.622197   150523.620822124.494964-22.475506**********
+   scf:  696   855433.177331   187886.858670   187886.841454127.050851-27.628970**********
+   scf:  697   202348.524516    28057.522865    28057.504215124.139522-69.019214892.600572
+   scf:  698   552707.581545   148130.577056   148130.539619120.993402-22.605181**********
+   scf:  699   884271.771959   197049.490678   197049.476892129.600481-27.819618**********
+   scf:  700   205661.379588    28350.177327    28350.161924126.856747-70.220016893.295229
+   scf:  701   547794.078250   147039.914444   147039.902063112.420612-22.207493**********
+   scf:  702   874750.961858   194625.309066   194625.273112128.051847-29.099275**********
+   scf:  703   196915.558148    27171.933292    27171.926295125.302625-70.259935892.889740
+   scf:  704   552680.455999   147542.185421   147542.177313112.958054-22.485691**********
+   scf:  705   845370.229250   186032.481749   186032.459175123.826999-28.155878**********
+   scf:  706   203905.560211    28259.755882    28259.731236121.033771-68.975725894.810646
+   scf:  707   557529.631106   150549.669896   150549.647220130.047817-22.140559**********
+   scf:  708   894051.394859   199033.021313   199033.014053131.283706-27.698293**********
+   scf:  709   199883.666956    27731.783106    27731.764547128.170819-70.324131895.441150
+   scf:  710   564022.183661   150875.314938   150875.300972123.439704-22.597595**********
+   scf:  711   848841.475680   186814.538080   186814.529787124.672465-28.389861**********
+   scf:  712   207933.451809    29113.021856    29113.002332121.339238-70.001688915.553123
+   scf:  713   547969.032781   147237.045297   147237.017031111.439474-22.706087**********
+   scf:  714   887575.040447   198143.142207   198143.126277129.290269-28.783929**********
+   scf:  715   200303.091671    27746.297980    27746.274696126.554762-70.355653894.970722
+   scf:  716   551913.854124   147427.830906   147427.813321113.269188-22.460176**********
+   scf:  717   848596.928842   187155.106874   187155.096080124.210594-28.477240**********
+   scf:  718   203349.510190    28164.191775    28164.174736121.456624-69.288450894.781768
+   scf:  719   550916.484603   148052.345973   148052.288560115.304548-22.357103**********
+   scf:  720   887735.293764   197823.645379   197823.627166129.646689-28.040874**********
+   scf:  721   199162.729044    27441.128308    27441.106590126.838126-70.164265890.808578
+   scf:  722   553281.108763   147900.898452   147900.889810115.099431-22.414762**********
+   scf:  723   847857.315929   186869.514535   186869.503597124.357140-28.356997**********
+   scf:  724   204014.919597    28314.950531    28314.929804121.580744-69.330973897.513087
+   scf:  725   557630.807615   150495.053574   150495.040505127.978210-22.290452**********
+   scf:  726   893905.022850   198883.913552   198883.906144130.913533-27.772003**********
+   scf:  727   198247.649145    27404.538373    27404.521280127.981624-70.309596892.964928
+   scf:  728   561429.892065   150042.690218   150042.670963121.421325-22.584369**********
+   scf:  729   846688.628089   186205.898363   186205.882025123.890864-28.229774**********
+   scf:  730   205819.351857    28637.775487    28637.756231121.122688-69.700404907.958214
+   scf:  731   550031.531239   148009.192984   148009.142667114.565869-22.532890**********
+   scf:  732   887301.223663   197737.596416   197737.574670129.277654-28.459949**********
+   scf:  733   201225.094694    27881.024190    27880.992802126.484128-70.126834894.607527
+   scf:  734   552610.033622   147755.991027   147755.972758115.943265-22.332756**********
+   scf:  735   850526.318233   187802.746553   187802.730079124.805949-28.539700**********
+   scf:  736   203197.352777    28189.762944    28189.745104122.040262-69.557173897.443717
+   scf:  737   556052.755271   149769.566797   149769.535943120.176159-22.368673**********
+   scf:  738   891827.685110   198371.696323   198371.679708130.362369-27.808522**********
+   scf:  739   197673.330675    27182.523482    27182.510228127.473533-70.203184889.626463
+   scf:  740   554616.809782   148130.520740   148130.514891115.059803-22.528656**********
+   scf:  741   846016.583015   186225.061999   186225.044202124.108371-28.176050**********
+   scf:  742   204401.463236    28317.727319    28317.703778121.345696-69.216195897.012949
+   scf:  743   548556.361044   147371.212726   147371.185006114.691604-22.383827**********
+   scf:  744   884928.510090   197338.372448   197338.347771128.960385-28.311874**********
+   scf:  745   203267.791706    28175.333102    28175.305714126.208818-70.108302894.772999
+   scf:  746   551713.133448   147742.724933   147742.704859116.682801-22.210381**********
+   scf:  747   853376.323754   188748.212710   188748.186252125.190287-28.927520**********
+   scf:  748   199027.769117    27584.259543    27584.248388122.410489-69.992435898.012104
+   scf:  749   559654.387285   150402.750676   150402.748925123.859019-22.472874**********
+   scf:  750   857070.890392   188393.094679   188393.070067127.195177-27.825369**********
+   scf:  751   201882.495296    28025.035400    28025.015405124.279555-69.102137893.496710
+   scf:  752   552400.221457   147841.483611   147841.459559119.331646-22.654971**********
+   scf:  753   881987.376131   196459.683227   196459.663707129.089189-27.816377**********
+   scf:  754   205913.353773    28339.692477    28339.678060126.365099-70.157323892.708428
+   scf:  755   547108.012804   146972.571073   146972.561073112.738256-22.099194**********
+   scf:  756   883397.332342   197019.584191   197019.557843128.207898-29.002097**********
+   scf:  757   197096.088501    27205.282643    27205.267534125.468201-70.390306892.214796
+   scf:  758   554140.912430   147970.857552   147970.852414113.835993-22.388286**********
+   scf:  759   846107.423863   186227.861902   186227.847454123.978062-28.189053**********
+   scf:  760   204242.867863    28314.134950    28314.109138121.192320-69.138534897.335281
+   scf:  761   557485.609646   150598.746733   150598.741199129.222079-22.186037**********
+   scf:  762   894594.579594   199094.558733   199094.553412131.224514-27.740434**********
+   scf:  763   198928.248113    27594.620332    27594.604646128.280286-70.293886894.886981
+   scf:  764   564936.962008   151044.892874   151044.878812123.680634-22.609565**********
+   scf:  765   847881.927954   186487.134026   186487.122813124.910027-28.246782**********
+   scf:  766   208972.665282    29265.322252    29265.308697121.424721-69.940232916.055893
+   scf:  767   546612.769951   146908.155625   146908.150028111.128980-22.709556**********
+   scf:  768   887752.457614   198377.162402   198377.149310129.332117-28.956750**********
+   scf:  769   200661.596996    27892.844185    27892.820787126.618370-70.447123897.067911
+   scf:  770   553605.350374   147849.899917   147849.891209114.147922-22.502465**********
+   scf:  771   848890.240083   187190.056239   187190.046662123.938018-28.477251**********
+   scf:  772   203609.045424    28204.418486    28204.398072121.192359-69.388203896.876693
+   scf:  773   553104.534600   148925.195924   148925.145827117.122632-22.342723**********
+   scf:  774   890522.567046   198283.974302   198283.956284130.133927-27.961217**********
+   scf:  775   197541.563728    27235.081438    27235.064760127.276644-70.177134890.652669
+   scf:  776   556556.237451   148637.929541   148637.915883117.515581-22.507529**********
+   scf:  777   845956.695974   186157.804755   186157.787138124.238476-28.109081**********
+   scf:  778   204946.284009    28408.761425    28408.739428121.450897-69.315339899.457742
+   scf:  779   552313.153962   148826.423358   148826.359018120.300260-22.357396**********
+   scf:  780   889558.452963   198196.750193   198196.732333129.853477-28.202847**********
+   scf:  781   200477.028409    27807.597295    27807.571124127.010537-70.214631895.133631
+   scf:  782   557491.459605   149067.569642   149067.549996119.736215-22.466724**********
+   scf:  783   849554.167056   187296.328532   187296.319870124.401349-28.422624**********
+   scf:  784   204693.839899    28466.992156    28466.969864121.631174-69.737539904.121144
+   scf:  785   556868.183147   150240.690319   150240.674290124.681773-22.396510**********
+   scf:  786   893444.606895   198724.523281   198724.514869130.631828-27.974935**********
+   scf:  787   197244.387205    27222.344608    27222.326633127.711331-70.292409891.646192
+   scf:  788   557062.622927   148666.391677   148666.373432116.413474-22.605991**********
+   scf:  789   844845.824538   185801.666770   185801.644890123.935119-28.083442**********
+   scf:  790   204922.034319    28372.408668    28372.389875121.184661-69.265644899.237020
+   scf:  791   547229.573673   147060.486875   147060.478839113.944376-22.410327**********
+   scf:  792   884327.679010   197252.279939   197252.254656128.723311-28.455735**********
+   scf:  793   202972.409822    28168.652606    28168.624798125.988210-70.094884895.232529
+   scf:  794   552159.531500   147816.041730   147816.020848117.680686-22.211125**********
+   scf:  795   853117.136094   188670.223938   188670.197367125.202434-28.853262**********
+   scf:  796   200138.228492    27747.572453    27747.553898122.426533-69.948175898.325949
+   scf:  797   559064.052673   150347.750026   150347.748456124.037264-22.427561**********
+   scf:  798   867733.954050   191365.017761   191364.986823128.843085-27.865465**********
+   scf:  799   201961.825821    27980.192424    27980.181824125.922646-69.348962892.761706
+   scf:  800   551872.370115   147678.704262   147678.685474117.853640-22.551125**********
+   scf:  801   867380.003536   192526.461427   192526.446015128.571387-28.285055**********
+   scf:  802   204414.608944    28285.364248    28285.349325125.836655-69.971610896.052690
+   scf:  803   548199.369352   146973.931975   146973.921611111.846673-22.434591**********
+   scf:  804   881631.945698   196424.735918   196424.711935128.052879-28.606600**********
+   scf:  805   198995.489453    27327.391861    27327.371433125.317632-70.174998889.602717
+   scf:  806   549591.241732   147006.288000   147006.269419112.415538-22.246445**********
+   scf:  807   848003.457458   187003.302687   187003.290726124.350567-28.489666**********
+   scf:  808   202843.433068    28176.651049    28176.637226121.569575-69.147566894.420530
+   scf:  809   558975.497980   150722.683736   150722.680251129.254632-22.188489**********
+   scf:  810   893938.352549   198881.535207   198881.527467131.104924-27.503128**********
+   scf:  811   199722.117331    27558.037243    27558.017125128.161549-70.290651892.652612
+   scf:  812   556701.933454   148821.512112   148821.495745116.521683-22.579755**********
+   scf:  813   848263.153267   186853.304058   186853.294135124.285092-28.410096**********
+   scf:  814   204523.725437    28422.404023    28422.377780121.513667-69.553715902.787734
+   scf:  815   553355.308055   148974.876804   148974.817842118.307619-22.448947**********
+   scf:  816   889399.658716   198033.608537   198033.589608129.804680-28.125494**********
+   scf:  817   199372.041926    27514.349982    27514.327532126.958202-70.210439892.362506
+   scf:  818   553557.605429   147932.569966   147932.560027115.052334-22.450314**********
+   scf:  819   848088.430245   186945.214112   186945.203597124.359338-28.363239**********
+   scf:  820   203978.562609    28287.779988    28287.758665121.596942-69.366914897.175217
+   scf:  821   553223.493535   148939.156358   148939.095890117.563866-22.380555**********
+   scf:  822   890034.479111   198226.812084   198226.794152130.034794-28.006913**********
+   scf:  823   198927.466661    27458.366912    27458.347080127.180957-70.214841892.041923
+   scf:  824   555508.698489   148446.376571   148446.367086116.529770-22.498884**********
+   scf:  825   847589.081306   186710.057942   186710.046858124.268341-28.289462**********
+   scf:  826   204519.181371    28380.054057    28380.028768121.495799-69.415747899.705176
+   scf:  827   555685.047293   149907.745502   149907.702160123.620100-22.364504**********
+   scf:  828   892494.070958   198639.721938   198639.711405130.512274-27.963172**********
+   scf:  829   198254.756593    27420.841633    27420.824240127.611290-70.275416893.150060
+   scf:  830   560550.527398   149787.777279   149787.758285121.378264-22.553271**********
+   scf:  831   846849.263399   186305.244576   186305.230409123.973054-28.208649**********
+   scf:  832   205693.850538    28598.242290    28598.221616121.202938-69.664406906.332712
+   scf:  833   551622.004001   148608.558729   148608.499294115.970876-22.494490**********
+   scf:  834   889288.363024   198096.828538   198096.810790129.732290-28.353038**********
+   scf:  835   199453.867949    27624.598396    27624.576912126.900490-70.166559893.979783
+   scf:  836   555237.644506   148330.379587   148330.370146116.880797-22.469608**********
+   scf:  837   848462.003793   187038.647916   187038.638311124.699831-28.263098**********
+   scf:  838   204478.571200    28348.345407    28348.322801121.928719-69.474144898.794458
+   scf:  839   553487.359393   149149.606527   149149.558092117.344193-22.406799**********
+   scf:  840   891134.236273   198417.770656   198417.755004130.163645-28.051835**********
+   scf:  841   197594.709346    27284.790140    27284.772109127.299671-70.221586891.761476
+   scf:  842   558904.127309   149293.069265   149293.048355120.250907-22.525560**********
+   scf:  843   845948.978532   186077.506475   186077.488680123.894760-28.116529**********
+   scf:  844   205367.187999    28504.999284    28504.978843121.125015-69.476719902.865631
+   scf:  845   553290.234036   149234.272203   149234.210889120.606604-22.395775**********
+   scf:  846   890868.227814   198403.346145   198403.331979130.129425-28.218912**********
