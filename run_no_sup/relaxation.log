@@ -1,0 +1,1749 @@
+Executable      : siesta
+Version         : 5.2.1
+Architecture    : x86_64
+Compiler version: GNU-13.3.0
+Compiler flags  : -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem <prefix>/include -I<prefix>/_build_env/include -fdebug-prefix-map=<prefix>/work=/usr/local/src/conda/siesta-5.2.1 -fdebug-prefix-map=<prefix>=/usr/local/src/conda-prefix -I<prefix>/lib -fallow-argument-mismatch -O3
+Parallelisations: none
+NetCDF support
+NetCDF-4 support
+Lua support
+DFT-D3 support
+
+Runtime information:
+* Directory : /home/samba/homes/convidat/Desktop/Projecte-Simulaci--main/anatase surface relaxed/run
+* Running in serial mode.
+>> Start of run:   4-JUN-2025  17:04:28
+
+                           *********************** 
+                           *  WELCOME TO SIESTA  * 
+                           *********************** 
+
+ NOTE: Siesta V5 introduces some new defaults for basis-set generation
+ NOTE: which might lead to slightly different numerical results.
+ NOTE: Please see the manual for full details and compatibility measures.
+
+
+reinit: Reading from file relaxation.fdf
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: 
+reinit: -----------------------------------------------------------------------
+reinit: System Label: SurRel
+reinit: -----------------------------------------------------------------------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+Species number:   1 Atomic number:   22 Label: Ti
+Species number:   2 Atomic number:    8 Label: O
+
+Ground state valence configuration (from tables):   4s02  4p00  3d02  4f00
+Ground state valence configuration (from tables):   2s02  2p04  3d00  4f00
+
+---- Processing specs for species: Ti
+Reading pseudopotential information in PSML from:
+  Ti.psml
+PSML file version: 1.1
+Using libxc ids:  101 130
+GGA--PBE XC_GGA_X_PBE--XC_GGA_C_PBE pb
+PSML uuid: caed23e0-be41-11e7-4603-0bd897f88bea
+Semicore shell(s) with  8 electrons included in the valence for Ti
+
+---- Processing specs for species: O
+Reading pseudopotential information in PSML from:
+  O.psml
+PSML file version: 1.1
+Using libxc ids:  101 130
+GGA--PBE XC_GGA_X_PBE--XC_GGA_C_PBE pb
+PSML uuid: 3cff85a0-be41-11e7-6c5c-1b1fe64d18ef
+
+---- Pseudopotential check for Ti
+
+Pseudized shells:
+3s( 2.00) rc: 1.36
+3p( 6.00) rc: 1.31
+3d( 2.00) rc: 1.66
+Valence configuration for ps generation: 3s:3p:3d:4s: Total charge:  12.000000
+Semicore shell(s): 3s 3p
+Fallback to non-perturbative polarization scheme for Ti
+Please see the manual if this is not desired in principle
+
+---- Pseudopotential check for O 
+
+Pseudized shells:
+2s( 2.00) rc: 1.36
+2p( 4.00) rc: 1.46
+3d( 0.00) rc: 1.26
+Valence configuration for ps generation: 2s:2p: Total charge:   6.000000
+For Ti, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+For O, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+Ti pseudopotential only contains V_ls up to l=2 -- lmxkb reset.
+O pseudopotential only contains V_ls up to l=2 -- lmxkb reset.
+
+<basis_specs>
+===============================================================================
+Ti                   Z=  22    Mass=  47.867        Charge= 0.17977+309
+Lmxo=2 Lmxkb= 2    BasisType=split      Semic=T
+L=0  Nsemic=1  Cnfigmx=4
+          i=1  nzeta=1  polorb=0  (3s)  (semicore shell)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000    
+            lambdas:    1.0000    
+          i=2  nzeta=2  polorb=0  (4s)  (to be polarized non-perturbatively)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=1  Cnfigmx=4
+          i=1  nzeta=1  polorb=0  (3p)  (semicore shell)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000    
+            lambdas:    1.0000    
+          i=2  nzeta=1  polorb=0  (4p)  (non-perturbative polarization shell)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:   0.19310-311
+               qyuk:   0.19763-322
+               qwid:   0.21220-312
+                rcs:    0.0000    
+            lambdas:    1.0000    
+L=2  Nsemic=0  Cnfigmx=3
+          i=1  nzeta=2  polorb=0  (3d)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+-------------------------------------------------------------------------------
+L=0  Nkbl=2  erefs: 0.17977+309 0.17977+309
+L=1  Nkbl=2  erefs: 0.17977+309 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+Using PAO.SplitTailNorm
+atom: Called for Ti                    (Z =  22)
+Maximum radius (at nrval) set to   50.00000 8518
+
+read_vps: Pseudopotential generation method:
+read_vps: ONCVPSP-3.Hamann's oncvpsp                        
+Valence charge in pseudo generation:   12.00000
+
+read_vps: Pseudopotential includes a core correction:
+read_vps: Pseudo-core for xc-correction
+
+xc_check: Exchange-correlation functional:
+xc_check: GGA Perdew, Burke & Ernzerhof 1996
+Got Vlocal (oncv-fit) from psml data
+Choosing vlocal chloc cutoff:  3.029916
+qtot up to nchloc:   12.00014688
+atom: Maximum radius for chlocal:    3.02992
+atom: Maximum radius for r*vlocal+2*Zval:    3.02992
+Reading KB projs from Ti psml data
+Using scalar-relativistic projectors in PSML file
+
+PSML: Kleinman-Bylander projectors: 
+   l= 0   rc=  1.375180   Ekb= 22.724697
+   l= 0   rc=  1.375180   Ekb=  2.527278
+   l= 1   rc=  1.326200   Ekb=  3.950805
+   l= 1   rc=  1.327537   Ekb= -0.169333
+   l= 2   rc=  1.683555   Ekb=-10.372181
+   l= 2   rc=  1.683555   Ekb= -2.954901
+
+PSML: Total number of  Kleinman-Bylander projectors:  18
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 3s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    2.635420
+                 energy =   -4.579527
+                kinetic =    2.326942
+    potential(screened) =   -6.906469
+       potential(ionic) =  -23.072621
+
+SPLIT: Basis orbitals for state 4s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    6.843982
+                 energy =   -0.314441
+                kinetic =    0.796941
+    potential(screened) =   -1.111382
+       potential(ionic) =   -8.916637
+
+   izeta = 2
+                 rmatch =    5.301264
+              splitnorm =    0.150000
+                 energy =   -0.140155
+                kinetic =    1.418596
+    potential(screened) =   -1.558752
+       potential(ionic) =  -10.896893
+
+SPLIT: Orbitals with angular momentum L= 1
+
+SPLIT: Basis orbitals for state 3p
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    2.931236
+                 energy =   -2.832213
+                kinetic =    5.021608
+    potential(screened) =   -7.853821
+       potential(ionic) =  -23.570229
+
+SPLIT: Basis orbitals for state 4p
+SPLIT: Non-perturbative polarization orbs for state 4s
+SPLIT: rc(1st zeta) (re)set to: 6.8440 (expansion factor: 1.0000)
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    6.843982
+                 energy =   -0.022664
+                kinetic =    0.981182
+    potential(screened) =   -1.003846
+       potential(ionic) =   -7.925992
+
+SPLIT: Orbitals with angular momentum L= 2
+
+SPLIT: Basis orbitals for state 3d
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    4.556878
+                 energy =   -0.289178
+                kinetic =    6.761259
+    potential(screened) =   -7.050436
+       potential(ionic) =  -20.805830
+
+   izeta = 2
+                 rmatch =    3.163483
+              splitnorm =    0.150000
+                 energy =   -0.141333
+                kinetic =    8.704185
+    potential(screened) =   -8.845518
+       potential(ionic) =  -23.898466
+atom: Total number of Sankey-type orbitals: 19
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 3s( 2.00) 4s( 2.00)                                                  
+ 3p( 6.00) 4p( 0.00)                                                  
+ 3d( 2.00)                                                            
+Vna: chval, zval:   12.00000  12.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   6.843982
+comcore: Pseudo-core radius Rcore=  1.766828
+
+atom: _________________________________________________________________________
+
+<basis_specs>
+===============================================================================
+O                    Z=   8    Mass=  15.999        Charge= 0.17977+309
+Lmxo=2 Lmxkb= 2    BasisType=split      Semic=F
+L=0  Nsemic=0  Cnfigmx=2
+          i=1  nzeta=2  polorb=0  (2s)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=0  Cnfigmx=2
+          i=1  nzeta=2  polorb=1  (2p)  (to be polarized perturbatively)
+            splnorm:   0.15000    
+               vcte:    40.000    
+               rinn:  -0.90000    
+               qcoe:    0.0000    
+               qyuk:    0.0000    
+               qwid:   0.10000E-01
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=2  Nsemic=0  Cnfigmx=3
+          i=1  nzeta=0  polorb=0  (3d)  (perturbative polarization orbital) (from 2p)
+-------------------------------------------------------------------------------
+L=0  Nkbl=1  erefs: 0.17977+309
+L=1  Nkbl=1  erefs: 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+Using PAO.SplitTailNorm
+atom: Called for O                     (Z =   8)
+Maximum radius (at nrval) set to   50.00000 8518
+
+read_vps: Pseudopotential generation method:
+read_vps: ONCVPSP-3.Hamann's oncvpsp                        
+Valence charge in pseudo generation:    6.00000
+
+read_vps: Pseudopotential includes a core correction:
+read_vps: Pseudo-core for xc-correction
+
+xc_check: Exchange-correlation functional:
+xc_check: GGA Perdew, Burke & Ernzerhof 1996
+Got Vlocal (oncv-fit) from psml data
+Choosing vlocal chloc cutoff:  6.020499
+qtot up to nchloc:    6.00001015
+atom: Maximum radius for chlocal:    6.02050
+atom: Maximum radius for r*vlocal+2*Zval:    6.02050
+Reading KB projs from O psml data
+Using scalar-relativistic projectors in PSML file
+
+PSML: Kleinman-Bylander projectors: 
+   l= 0   rc=  1.372412   Ekb= 12.113471
+   l= 0   rc=  1.372412   Ekb=  1.648048
+   l= 1   rc=  1.474132   Ekb= -9.434259
+   l= 1   rc=  1.474132   Ekb= -2.298541
+   l= 2   rc=  1.277664   Ekb= -2.663910
+
+PSML: Total number of  Kleinman-Bylander projectors:  13
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 2s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    3.214667
+                 energy =   -1.737143
+                kinetic =    1.647372
+    potential(screened) =   -3.384514
+       potential(ionic) =  -11.335845
+
+   izeta = 2
+                 rmatch =    2.206279
+              splitnorm =    0.150000
+                 energy =   -1.248930
+                kinetic =    2.868486
+    potential(screened) =   -4.117415
+       potential(ionic) =  -12.788572
+
+SPLIT: Orbitals with angular momentum L= 1
+
+SPLIT: Basis orbitals for state 2p
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.022050 Ry
+Split based on tail norm
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    3.819866
+                 energy =   -0.639970
+                kinetic =    4.771237
+    potential(screened) =   -5.411207
+       potential(ionic) =  -13.142963
+
+   izeta = 2
+                 rmatch =    2.601252
+              splitnorm =    0.150000
+                 energy =   -0.382093
+                kinetic =    6.846164
+    potential(screened) =   -7.228258
+       potential(ionic) =  -15.727266
+
+POLgen: Perturbative polarization orbital with L=  2
+
+POLgen: Polarization orbital for state 2p
+Split based on tail norm
+
+   izeta = 1
+                     rc =    3.819866
+                 energy =    2.500658
+                kinetic =    4.605602
+    potential(screened) =   -2.104944
+       potential(ionic) =   -8.455031
+atom: Total number of Sankey-type orbitals: 13
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 2s( 2.00)                                                            
+ 2p( 4.00)                                                            
+ 3d( 0.00)                                                            
+Vna: chval, zval:    6.00000   6.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   3.819866
+comcore: Pseudo-core radius Rcore=  1.354557
+
+atom: _________________________________________________________________________
+
+prinput: Basis input 
+
+PAO.BasisType split     
+
+%block ChemicalSpeciesLabel
+    1   22 Ti                      # Species index, atomic number, species label
+    2    8 O                       # Species index, atomic number, species label
+%endblock ChemicalSpeciesLabel
+
+%block PAO.Basis                 # Define Basis set
+# WARNING: This information might be incomplete!
+Ti                    5                    # Species label, number of l-shells
+ n=3   0   1                         # n, l, Nzeta 
+   2.635   
+   1.000   
+ n=4   0   2                         # n, l, Nzeta 
+   6.844      5.301   
+   1.000      1.000   
+ n=3   1   1                         # n, l, Nzeta 
+   2.931   
+   1.000   
+ n=4   1   1                         # n, l, Nzeta 
+   6.844   
+   1.000   
+ n=3   2   2                         # n, l, Nzeta 
+   4.557      3.163   
+   1.000      1.000   
+O                     2                    # Species label, number of l-shells
+ n=2   0   2                         # n, l, Nzeta 
+   3.215      2.206   
+   1.000      1.000   
+ n=2   1   2 P   1                   # n, l, Nzeta, Polarization, NzetaPol
+   3.820      2.601   
+   1.000      1.000   
+%endblock PAO.Basis
+
+prinput: ----------------------------------------------------------------------
+
+Dumping basis to NetCDF file Ti.ion.nc
+Dumping basis to NetCDF file O.ion.nc
+coor:   Atomic-coordinates input format  =     Cartesian coordinates
+coor:                                          (in Angstroms)
+
+siesta: Atomic coordinates (Bohr) and species
+siesta:      3.57044   3.57044   8.97389  1        1
+siesta:      3.57044   0.00000  13.46084  1        2
+siesta:     -0.00000  -0.00000   0.00000  1        3
+siesta:      0.00000   3.57044   4.48695  1        4
+siesta:     -0.00000   3.57044   8.22063  2        5
+siesta:      3.57044   3.57044  12.70758  2        6
+siesta:      3.57044  -0.00000   9.72716  2        7
+siesta:      0.00000   0.00000  14.21411  2        8
+siesta:      3.57044   0.00000  17.19452  2        9
+siesta:      0.00000   0.00000   3.73368  2       10
+siesta:     -0.00000   3.57044   0.75327  2       11
+siesta:      3.57044   3.57044   5.24022  2       12
+
+siesta: System type = molecule  
+
+initatomlists: Number of atoms, orbitals, and projectors:     12   180   176
+
+coxmol: Writing XMOL coordinates into file SurRel.xyz                                                                                                                                                                                                                          
+
+siesta: ******************** Simulation parameters ****************************
+siesta:
+siesta: The following are some of the parameters of the simulation.
+siesta: A complete list of the parameters used, including default values,
+siesta: can be found in file out.fdf
+siesta:
+redata: Spin configuration                          = none
+redata: Number of spin components                   = 1
+redata: Time-Reversal Symmetry                      = T
+redata: Spin spiral                                 = F
+redata: Long output                                 =   F
+redata: Number of Atomic Species                    =        2
+redata: Charge density info will appear in .RHO file
+redata: Write Mulliken charges (when)               = none
+redata: Write Mulliken Pop.                         = NO
+redata: Write Hirshfeld charges (when)              = none
+redata: Write Voronoi charges (when)                = none
+redata: Write spin charge (when)                    = none
+redata: Matel table size (NRTAB)                    =     1024
+redata: Mesh Cutoff                                 =   300.0000 Ry
+redata: Net charge of the system                    =     0.0000 |e|
+redata: Min. number of SCF Iter                     =        0
+redata: Max. number of SCF Iter                     =     1000
+redata: SCF convergence failure will abort job
+redata: SCF mix quantity                            = Hamiltonian
+redata: Mix DM or H after convergence               =   F
+redata: Recompute H after scf cycle                 =   F
+redata: Mix DM in first SCF step                    =   T
+redata: Write Pulay info on disk                    =   F
+redata: New DM Occupancy tolerance                  = 0.000000000001
+redata: No kicks to SCF
+redata: DM Mixing Weight for Kicks                  =     0.5000
+redata: Require Harris convergence for SCF          =   F
+redata: Harris energy tolerance for SCF             =     0.000100 eV
+redata: Require DM convergence for SCF              =   T
+redata: DM tolerance for SCF                        =     0.000100
+redata: Require EDM convergence for SCF             =   F
+redata: EDM tolerance for SCF                       =     0.001000 eV
+redata: Require H convergence for SCF               =   T
+redata: Hamiltonian tolerance for SCF               =     0.001000 eV
+redata: Require (free) Energy convergence for SCF   =   F
+redata: (free) Energy tolerance for SCF             =     0.000100 eV
+redata: Using DFT-D3 dispersion                     =   F
+redata: Using Saved Data (generic)                  =   F
+redata: Use continuation files for DM               =   T
+redata: Neglect nonoverlap interactions             =   F
+redata: Method of Calculation                       = Diagonalization
+redata: Electronic Temperature                      =   299.9863 K
+redata: Fix the spin of the system                  =   F
+redata: Max. number of TDED Iter                    =        1
+redata: Number of TDED substeps                     =        3
+redata: Dynamics option                             = CG coord. optimization
+redata: Variable cell                               =   T
+redata: Use continuation files for CG               =   F
+redata: Max atomic displ per move                   =     0.1058 Ang
+redata: Maximum number of optimization moves        =        6
+redata: Force tolerance                             =     0.0050 eV/Ang
+redata: Stress tolerance                            =     0.0100 GPa
+mix.SCF: Pulay mixing                            = Pulay
+mix.SCF:    Variant                              = stable
+mix.SCF:    History steps                        = 2
+mix.SCF:    Linear mixing weight                 =     0.250000
+mix.SCF:    Mixing weight                        =     0.250000
+mix.SCF:    SVD condition                        = 0.1000E-07
+redata: Save all siesta data in one NC              =   F
+redata: ***********************************************************************
+
+%block SCF.Mixers
+  Pulay
+%endblock SCF.Mixers
+
+%block SCF.Mixer.Pulay
+  # Mixing method
+  method pulay
+  variant stable
+
+  # Mixing options
+  weight 0.2500
+  weight.linear 0.2500
+  history 2
+%endblock SCF.Mixer.Pulay
+
+DM_history_depth set to one: no extrapolation allowed by default for geometry relaxation
+Size of DM history Fstack: 1
+Total number of electrons:    96.000000
+Total ionic charge:    96.000000
+k-point displ. along   1 input, could be:     0.00    0.50
+k-point displ. along   2 input, could be:     0.00    0.50
+ Kpoints in:           12 . Kpoints trimmed:           11
+
+siesta: k-grid: Number of k-points = 11
+siesta: k-points from Monkhorst-Pack grid
+siesta: k-cutoff (effective) =    14.549 Ang
+siesta: k-point supercell and displacements
+siesta: k-grid:     4     0     0      0.000
+siesta: k-grid:     0     4     0      0.000
+siesta: k-grid:     0     0     1      0.000
+
+diag: Algorithm                                     = D&C
+diag: Used triangular part                          = Lower
+diag: Absolute tolerance                            =  0.100E-15
+diag: Orthogonalization factor                      =  0.100E-05
+diag: Memory factor                                 =  1.0000
+
+siesta: Constraint (6): pos
+  [ 1 -- 6 ]
+
+
+ts: **************************************************************
+ts: Save H and S matrices                           =    F
+ts: Save DM and EDM matrices                        =    F
+ts: Only save the overlap matrix S                  =    F
+ts: **************************************************************
+
+************************ Begin: TS CHECKS AND WARNINGS ************************
+************************ End: TS CHECKS AND WARNINGS **************************
+
+
+                     ====================================
+                        Begin CG opt. move =      0
+                     ====================================
+
+outcell: Unit cell vectors (Ang):
+       11.889394    0.000000    0.000000
+        0.000000   11.889394    0.000000
+        0.000000    0.000000   29.098947
+
+outcell: Cell vector modules (Ang)   :   11.889394   11.889394   29.098947
+outcell: Cell angles (23,13,12) (deg):     90.0000     90.0000     90.0000
+outcell: Cell volume (Ang**3)        :   4113.3599
+<dSpData1D:S at geom step 0
+  <sparsity:sparsity for geom step 0
+    nrows_g=180 nrows=180 sparsity=.6730 nnzs=21806, refcount: 7>
+  <dData1D:(new from dSpData1D) n=21806, refcount: 1>
+refcount: 1>
+new_DM -- step:     1
+Initializing Density Matrix...
+
+Attempting to read DM from file... Failed...
+DM filled with atomic data:
+<dSpData2D:DM initialized from atoms
+  <sparsity:sparsity for geom step 0
+    nrows_g=180 nrows=180 sparsity=.6730 nnzs=21806, refcount: 8>
+  <dData2D:DM n=21806 m=1, refcount: 1>
+refcount: 1>
+No. of atoms with KB's overlaping orbs in proc 0. Max # of overlaps:      12      91
+
+InitMesh: MESH = 128 x 128 x 320 = 5242880
+InitMesh: Mesh cutoff (required, used) =   300.000   320.334 Ry
+New grid distribution [1]: sub = 2
+
+stepf: Fermi-Dirac step function
+
+siesta: Program's energy decomposition (eV):
+siesta: Ebs     =     -1952.615641
+siesta: Eions   =     14881.071237
+siesta: Ena     =      2074.325801
+siesta: Ekin    =      4921.937244
+siesta: Enl     =      -541.913653
+siesta: Eso     =         0.000000
+siesta: Edftu   =         0.000000
+siesta: DEna    =       217.029213
+siesta: DUscf   =       137.286705
+siesta: DUext   =         0.000000
+siesta: Ex      =     -1754.216439
+siesta: Ec      =      -117.468911
+siesta: Exc     =     -1871.685350
+siesta: EbV     =         0.000000
+siesta: eta*DQ  =         0.000000
+siesta: Emadel  =         0.000000
+siesta: Emeta   =         0.000000
+siesta: Emolmec =         0.000000
+siesta: Ekinion =         0.000000
+siesta: Eharris =     -9773.632184
+siesta: Etot    =     -9944.091277
+siesta: FreeEng =     -9944.091277
+
+        iscf     Eharris(eV)        E_KS(eV)     FreeEng(eV)     dDmax    Ef(eV) dHmax(eV)
+   scf:    1    -9773.632184    -9944.091277    -9944.091277  1.856259 -3.660473 37.965872
+timer: Routine,Calls,Time,% = IterSCF        1       3.563  25.65
+   scf:    2    -5861.899036    -8795.134189    -8795.134189  2.171696 -3.730433171.247238
+   scf:    3    -9584.927221   -10006.579411   -10006.579411  2.083577 -3.333216 29.913466
+   scf:    4    -9997.836650   -10007.008091   -10007.008091  0.266290 -3.524079 26.443913
+   scf:    5    -5810.426863    -8753.400269    -8753.401635  2.124784 -3.774855174.929976
+   scf:    6   -10155.069257   -10030.145016   -10030.145039  1.894527 -3.229421 14.370422
+   scf:    7    -9883.037408    -9999.372935    -9999.372935  1.363838 -3.822165 28.896668
+   scf:    8   -10018.260504   -10036.048733   -10036.059338  1.070417 -3.822914 10.012706
+   scf:    9   -10003.492604   -10029.682706   -10029.687322  0.732966 -3.359391 20.523939
+   scf:   10    -9909.348773   -10003.996232   -10003.996232  1.370123 -3.691841 28.116642
+   scf:   11    -9623.733194    -9930.613402    -9930.672734  1.709071 -3.594202 54.266682
+   scf:   12    -9856.877972    -9992.592105    -9992.612906  1.661421 -2.986571 42.290210
+   scf:   13    -9822.437097    -9983.879134    -9983.879134  1.490786 -3.897020 39.371487
+   scf:   14    -8837.854899    -9695.194848    -9695.266582  2.018277 -3.757198 96.611211
+   scf:   15    -9603.843808    -9973.501841    -9973.501841  2.011119 -2.933390 35.196211
+   scf:   16    -9928.863213    -9991.845332    -9991.845332  0.927344 -3.143363 30.896187
+   scf:   17    -5803.922698    -8761.397959    -8761.401751  2.064145 -3.290289174.994906
+   scf:   18   -10063.627982   -10029.094676   -10029.138256  1.897796 -3.064148 14.451690
+   scf:   19    -9883.823361    -9996.510060    -9996.510060  1.361686 -3.629953 30.504390
+   scf:   20    -9891.263112   -10004.504152   -10004.576258  1.213830 -3.800171 29.848626
+   scf:   21    -9930.801856   -10008.929511   -10008.929830  1.091634 -3.044313 33.635498
+   scf:   22    -9847.955043    -9989.928120    -9989.928120  1.534631 -4.081101 34.898128
+   scf:   23    -8846.666444    -9698.103341    -9698.162027  1.973864 -3.949828 92.452654
+   scf:   24    -9619.716527    -9970.977939    -9971.017932  1.943235 -2.874491 34.270456
+   scf:   25    -9892.571664    -9987.494480    -9987.494480  1.017161 -3.113738 32.552647
+   scf:   26    -6276.108136    -8905.708546    -8905.710492  2.089992 -3.551148171.870863
+   scf:   27   -10043.696043   -10015.334910   -10015.335750  1.903578 -2.868064 25.240178
+   scf:   28    -9836.602063    -9988.600871    -9988.600871  1.644829 -3.497507 36.428459
+   scf:   29    -9615.890990    -9924.667669    -9924.715570  1.613765 -3.879199 51.383649
+   scf:   30    -9881.333254   -10000.452339   -10000.453518  1.441102 -2.894013 37.650580
+   scf:   31    -9830.973531    -9985.200090    -9985.200090  1.576579 -4.044876 38.185169
+   scf:   32    -8807.349441    -9684.804633    -9684.855898  2.017745 -3.975408 95.129986
+   scf:   33    -9611.547016    -9975.397922    -9975.398038  2.013887 -2.887480 34.696228
+   scf:   34    -9926.024424    -9992.109591    -9992.109591  0.918171 -3.172188 30.198905
+   scf:   35    -5784.829015    -8753.761203    -8753.768958  2.076505 -3.259097175.347635
+   scf:   36   -10126.649852   -10025.560131   -10025.561210  1.876041 -3.030019 15.721521
+   scf:   37    -9862.703600    -9994.338160    -9994.338160  1.559772 -3.570860 30.887180
+   scf:   38   -10016.860680   -10033.454394   -10033.478934  1.011341 -3.838483 12.160699
+   scf:   39    -9972.678114   -10021.952956   -10021.953699  0.967167 -3.126115 26.196639
+   scf:   40    -9907.060606   -10004.137836   -10004.137836  1.476757 -3.631803 28.077100
+   scf:   41    -8919.407397    -9719.673440    -9719.741800  1.926355 -3.833124 89.857819
+   scf:   42    -9827.933397    -9985.905447    -9985.928445  1.863628 -2.862324 45.426333
+   scf:   43    -9804.977731    -9981.545975    -9981.545975  1.510422 -3.778436 43.361542
+   scf:   44    -8823.183514    -9686.264033    -9686.332774  2.063883 -3.804050 96.804002
+   scf:   45    -9674.100227    -9992.029420    -9992.029420  2.005378 -2.983391 30.736535
+   scf:   46    -9965.982394    -9999.555913    -9999.555913  0.674552 -3.509705 29.549995
+   scf:   47    -5813.825756    -8759.506791    -8759.508714  2.075760 -3.383346175.023740
+   scf:   48   -10138.866834   -10024.581482   -10024.581496  1.881695 -3.032768 17.511496
+   scf:   49    -9861.312270    -9994.758185    -9994.758185  1.509396 -3.618047 31.212785
+   scf:   50   -10001.998939   -10030.688162   -10030.699829  1.149008 -3.730983 13.249117
+   scf:   51    -9961.501060   -10018.520998   -10018.521367  1.043279 -3.149305 28.756608
+   scf:   52    -9894.796379   -10001.095087   -10001.095087  1.463906 -3.599399 29.183318
+   scf:   53    -8880.226215    -9708.250955    -9708.320137  1.944561 -3.866990 92.351885
+   scf:   54    -9803.802962    -9984.145309    -9984.147473  1.873343 -2.860953 44.547239
+   scf:   55    -9807.308063    -9980.726133    -9980.726133  1.563060 -3.867958 42.583140
+   scf:   56    -8776.656098    -9672.916499    -9672.981137  2.068330 -4.040491 97.511047
+   scf:   57    -9664.110647    -9990.318348    -9990.318349  2.019432 -2.961340 30.149412
+   scf:   58    -9959.342115    -9998.586095    -9998.586095  0.715912 -3.525207 29.228489
+   scf:   59    -5807.416789    -8757.482040    -8757.484881  2.077690 -3.357528175.114809
+   scf:   60   -10139.578817   -10023.448184   -10023.448193  1.880613 -3.052073 17.941752
+   scf:   61    -9857.261939    -9994.047623    -9994.047623  1.502438 -3.595038 31.327902
+   scf:   62    -9995.946575   -10029.340757   -10029.359512  1.156170 -3.720408 14.515580
+   scf:   63    -9959.526872   -10017.888333   -10017.888665  1.043945 -3.134029 29.101772
+   scf:   64    -9890.061968    -9999.954131    -9999.954131  1.474697 -3.591636 29.511109
+   scf:   65    -8879.283764    -9708.073224    -9708.142101  1.947557 -3.872402 92.224765
+   scf:   66    -9798.196227    -9983.331098    -9983.331929  1.871060 -2.866065 44.521602
+   scf:   67    -9806.942349    -9980.405392    -9980.405392  1.582607 -3.877695 42.513991
+   scf:   68    -8767.483900    -9670.327060    -9670.390831  2.068473 -4.072512 97.598151
+   scf:   69    -9662.086052    -9990.079850    -9990.079850  2.021424 -2.958056 30.165888
+   scf:   70    -9959.123611    -9998.505815    -9998.505815  0.716774 -3.530157 29.213411
+   scf:   71    -5808.215375    -8757.804242    -8757.806931  2.078706 -3.357050175.108060
+   scf:   72   -10139.366059   -10023.451537   -10023.451546  1.880895 -3.048531 17.933032
+   scf:   73    -9857.271926    -9994.042206    -9994.042206  1.502882 -3.593103 31.325842
+   scf:   74    -9996.446230   -10029.434199   -10029.452255  1.155567 -3.720281 14.411930
+   scf:   75    -9959.652471   -10017.938916   -10017.939244  1.044597 -3.134104 29.067089
+   scf:   76    -9890.461787   -10000.050940   -10000.050940  1.474133 -3.592224 29.483426
+   scf:   77    -8879.582269    -9708.151621    -9708.220561  1.947497 -3.871729 92.221243
+   scf:   78    -9798.790982    -9983.425598    -9983.426489  1.871260 -2.864984 44.513297
+   scf:   79    -9807.002007    -9980.438748    -9980.438748  1.580695 -3.877610 42.513455
+   scf:   80    -8768.362623    -9670.578814    -9670.642700  2.068549 -4.069529 97.590114
+   scf:   81    -9662.288587    -9990.103204    -9990.103204  2.021312 -2.958289 30.162060
+   scf:   82    -9959.135855    -9998.514527    -9998.514527  0.716709 -3.529781 29.213513
+   scf:   83    -5808.102481    -8757.756356    -8757.759064  2.078652 -3.357094175.109075
+   scf:   84   -10139.405798   -10023.448652   -10023.448662  1.880869 -3.049073 17.934340
+   scf:   85    -9857.260445    -9994.041517    -9994.041517  1.502682 -3.593148 31.324560
+   scf:   86    -9996.392996   -10029.425504   -10029.443630  1.155665 -3.720209 14.422597
+   scf:   87    -9959.671979   -10017.941868   -10017.942195  1.044332 -3.134117 29.065379
+   scf:   88    -9890.418277   -10000.040114   -10000.040114  1.474144 -3.592169 29.486262
+   scf:   89    -8879.648316    -9708.173248    -9708.242183  1.947497 -3.871520 92.218076
+   scf:   90    -9798.738123    -9983.417423    -9983.418306  1.871225 -2.865090 44.513124
+   scf:   91    -9806.998046    -9980.435369    -9980.435369  1.580873 -3.877683 42.513028
+   scf:   92    -8768.283135    -9670.556887    -9670.620763  2.068540 -4.069794 97.590847
+   scf:   93    -9662.262403    -9990.099341    -9990.099341  2.021328 -2.958259 30.162772
+   scf:   94    -9959.132032    -9998.513073    -9998.513073  0.716739 -3.529818 29.213673
+   scf:   95    -5808.113363    -8757.761349    -8757.764055  2.078657 -3.357087175.108943
+   scf:   96   -10139.399471   -10023.448982   -10023.448991  1.880871 -3.048995 17.934136
+   scf:   97    -9857.261645    -9994.041507    -9994.041507  1.502707 -3.593149 31.324731
+   scf:   98    -9996.401128   -10029.426826   -10029.444941  1.155649 -3.720222 14.420979
+   scf:   99    -9959.669347   -10017.941512   -10017.941839  1.044370 -3.134113 29.065553
+   scf:  100    -9890.424886   -10000.041753   -10000.041753  1.474141 -3.592178 29.485827
+   scf:  101    -8879.639779    -9708.170428    -9708.239363  1.947497 -3.871549 92.218461
+   scf:  102    -9798.746433    -9983.418689    -9983.419573  1.871230 -2.865072 44.513146
+   scf:  103    -9806.998623    -9980.435881    -9980.435881  1.580845 -3.877672 42.513089
+   scf:  104    -8768.295557    -9670.560330    -9670.624207  2.068541 -4.069752 97.590729
+   scf:  105    -9662.266530    -9990.099957    -9990.099958  2.021325 -2.958265 30.162665
+   scf:  106    -9959.132694    -9998.513311    -9998.513311  0.716734 -3.529813 29.213649
+   scf:  107    -5808.111738    -8757.760587    -8757.763293  2.078656 -3.357089175.108962
+   scf:  108   -10139.400482   -10023.448938   -10023.448948  1.880870 -3.049007 17.934165
+   scf:  109    -9857.261486    -9994.041515    -9994.041515  1.502703 -3.593149 31.324700
+   scf:  110    -9996.399907   -10029.426633   -10029.444749  1.155652 -3.720220 14.421220
+   scf:  111    -9959.669820   -10017.941584   -10017.941911  1.044364 -3.134114 29.065516
+   scf:  112    -9890.423889   -10000.041505   -10000.041505  1.474141 -3.592177 29.485893
+   scf:  113    -8879.641253    -9708.170912    -9708.239847  1.947497 -3.871544 92.218398
+   scf:  114    -9798.745187    -9983.418498    -9983.419382  1.871229 -2.865075 44.513143
+   scf:  115    -9806.998535    -9980.435803    -9980.435803  1.580849 -3.877674 42.513079
+   scf:  116    -8768.293713    -9670.559821    -9670.623698  2.068541 -4.069758 97.590746
+   scf:  117    -9662.265902    -9990.099863    -9990.099863  2.021326 -2.958264 30.162683
+   scf:  118    -9959.132596    -9998.513275    -9998.513275  0.716735 -3.529814 29.213653
+   scf:  119    -5808.111995    -8757.760707    -8757.763413  2.078656 -3.357089175.108958
+   scf:  120   -10139.400325   -10023.448946   -10023.448955  1.880870 -3.049005 17.934160
+   scf:  121    -9857.261514    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  122    -9996.400100   -10029.426664   -10029.444780  1.155651 -3.720221 14.421182
+   scf:  123    -9959.669747   -10017.941572   -10017.941900  1.044365 -3.134113 29.065522
+   scf:  124    -9890.424046   -10000.041544   -10000.041544  1.474141 -3.592177 29.485882
+   scf:  125    -8879.641021    -9708.170836    -9708.239771  1.947497 -3.871545 92.218408
+   scf:  126    -9798.745383    -9983.418528    -9983.419412  1.871230 -2.865074 44.513144
+   scf:  127    -9806.998548    -9980.435815    -9980.435815  1.580848 -3.877673 42.513081
+   scf:  128    -8768.294005    -9670.559902    -9670.623779  2.068541 -4.069757 97.590743
+   scf:  129    -9662.266002    -9990.099878    -9990.099878  2.021326 -2.958263 30.162680
+   scf:  130    -9959.132612    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  131    -5808.111956    -8757.760688    -8757.763394  2.078656 -3.357089175.108959
+   scf:  132   -10139.400350   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  133    -9857.261510    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  134    -9996.400070   -10029.426659   -10029.444775  1.155651 -3.720220 14.421188
+   scf:  135    -9959.669758   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  136    -9890.424022   -10000.041538   -10000.041538  1.474141 -3.592177 29.485884
+   scf:  137    -8879.641057    -9708.170848    -9708.239783  1.947497 -3.871545 92.218406
+   scf:  138    -9798.745352    -9983.418523    -9983.419407  1.871230 -2.865074 44.513143
+   scf:  139    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  140    -8768.293960    -9670.559889    -9670.623766  2.068541 -4.069757 97.590744
+   scf:  141    -9662.265986    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  142    -9959.132609    -9998.513279    -9998.513279  0.716735 -3.529813 29.213653
+   scf:  143    -5808.111962    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  144   -10139.400346   -10023.448945   -10023.448955  1.880870 -3.049005 17.934161
+   scf:  145    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  146    -9996.400075   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  147    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  148    -9890.424026   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  149    -8879.641051    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  150    -9798.745357    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  151    -9806.998547    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  152    -8768.293967    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  153    -9662.265989    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  154    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  155    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  156   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  157    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  158    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  159    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  160    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  161    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  162    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  163    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  164    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  165    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  166    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  167    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  168   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  169    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  170    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  171    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  172    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  173    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  174    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  175    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  176    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  177    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  178    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  179    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  180   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  181    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  182    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  183    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  184    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  185    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  186    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  187    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  188    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  189    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  190    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  191    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  192   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  193    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  194    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  195    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  196    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  197    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  198    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  199    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  200    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  201    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  202    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  203    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  204   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  205    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  206    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  207    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  208    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  209    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  210    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  211    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  212    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  213    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  214    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  215    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  216   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  217    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  218    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  219    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  220    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  221    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  222    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  223    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  224    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  225    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  226    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  227    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  228   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  229    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  230    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  231    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  232    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  233    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  234    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  235    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  236    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  237    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  238    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  239    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  240   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  241    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  242    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  243    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  244    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  245    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  246    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  247    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  248    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  249    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  250    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  251    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  252   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  253    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  254    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  255    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  256    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  257    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  258    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  259    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  260    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  261    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  262    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  263    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  264   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  265    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  266    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  267    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  268    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  269    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  270    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  271    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  272    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  273    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  274    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  275    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  276   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  277    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  278    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  279    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  280    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  281    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  282    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  283    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  284    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  285    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  286    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  287    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  288   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  289    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  290    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  291    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  292    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  293    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  294    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  295    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  296    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  297    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  298    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  299    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  300   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  301    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  302    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  303    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  304    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  305    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  306    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  307    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  308    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  309    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  310    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  311    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  312   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  313    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  314    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  315    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  316    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  317    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  318    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  319    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  320    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  321    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  322    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  323    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  324   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  325    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  326    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  327    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  328    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  329    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  330    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  331    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  332    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  333    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  334    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  335    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  336   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  337    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  338    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  339    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  340    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  341    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  342    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  343    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  344    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  345    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  346    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  347    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  348   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  349    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  350    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  351    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  352    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  353    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  354    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  355    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  356    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  357    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  358    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  359    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  360   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  361    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  362    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  363    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  364    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  365    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  366    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  367    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  368    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  369    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  370    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  371    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  372   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  373    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  374    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  375    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  376    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  377    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  378    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  379    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  380    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  381    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  382    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  383    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  384   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  385    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  386    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  387    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  388    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  389    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  390    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  391    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  392    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  393    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  394    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  395    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  396   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  397    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  398    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  399    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  400    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  401    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  402    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  403    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  404    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  405    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  406    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  407    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  408   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  409    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  410    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  411    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  412    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  413    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  414    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  415    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  416    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  417    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  418    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  419    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  420   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  421    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  422    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  423    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  424    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  425    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  426    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  427    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  428    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  429    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  430    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  431    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  432   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  433    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  434    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  435    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  436    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  437    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  438    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  439    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  440    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  441    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  442    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  443    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  444   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  445    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  446    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  447    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  448    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  449    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  450    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  451    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  452    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  453    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  454    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  455    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  456   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  457    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  458    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  459    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  460    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  461    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  462    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  463    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  464    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  465    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  466    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  467    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  468   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  469    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  470    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  471    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  472    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  473    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  474    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  475    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  476    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  477    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  478    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  479    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  480   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  481    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  482    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  483    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  484    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  485    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  486    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  487    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  488    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  489    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  490    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  491    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  492   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  493    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  494    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  495    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  496    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  497    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  498    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  499    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  500    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  501    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  502    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  503    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  504   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  505    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  506    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  507    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  508    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  509    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  510    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  511    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  512    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  513    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  514    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  515    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  516   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  517    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  518    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  519    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  520    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  521    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  522    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  523    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  524    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  525    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  526    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  527    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  528   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  529    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  530    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  531    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  532    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  533    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  534    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  535    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  536    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  537    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  538    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  539    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  540   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  541    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  542    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  543    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  544    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  545    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  546    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  547    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  548    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  549    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  550    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  551    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  552   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  553    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  554    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  555    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  556    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  557    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  558    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  559    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  560    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  561    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  562    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  563    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  564   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  565    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  566    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  567    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  568    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  569    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  570    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  571    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  572    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  573    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  574    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  575    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  576   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  577    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  578    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  579    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  580    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  581    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  582    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  583    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  584    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  585    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  586    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  587    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  588   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  589    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  590    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  591    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  592    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  593    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  594    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  595    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  596    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  597    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  598    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  599    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  600   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  601    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  602    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  603    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  604    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  605    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  606    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  607    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  608    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  609    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  610    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  611    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  612   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  613    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  614    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  615    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  616    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  617    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  618    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  619    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  620    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  621    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  622    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  623    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  624   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  625    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  626    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  627    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  628    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  629    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  630    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  631    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  632    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  633    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  634    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  635    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  636   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  637    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  638    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  639    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  640    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  641    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  642    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  643    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  644    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  645    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  646    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  647    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  648   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  649    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  650    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  651    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  652    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  653    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  654    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  655    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  656    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  657    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  658    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  659    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  660   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  661    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  662    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  663    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  664    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  665    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  666    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  667    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  668    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  669    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  670    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  671    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  672   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  673    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  674    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  675    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  676    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  677    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  678    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  679    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  680    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  681    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  682    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  683    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  684   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  685    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  686    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  687    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  688    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  689    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  690    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  691    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  692    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  693    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  694    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  695    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  696   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  697    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  698    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  699    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  700    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  701    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  702    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  703    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  704    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  705    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  706    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  707    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  708   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  709    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  710    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  711    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  712    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  713    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  714    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  715    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  716    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  717    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  718    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  719    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  720   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  721    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  722    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  723    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  724    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  725    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  726    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  727    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  728    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  729    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  730    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  731    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  732   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  733    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  734    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  735    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  736    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  737    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  738    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  739    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  740    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  741    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  742    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  743    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  744   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  745    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  746    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  747    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  748    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  749    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  750    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  751    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  752    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  753    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  754    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  755    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  756   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  757    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  758    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  759    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  760    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  761    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  762    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  763    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  764    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  765    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  766    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  767    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  768   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  769    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  770    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  771    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  772    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  773    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  774    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  775    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  776    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  777    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  778    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  779    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  780   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  781    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  782    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  783    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  784    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  785    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  786    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  787    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  788    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  789    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  790    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  791    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  792   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  793    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  794    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  795    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  796    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  797    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  798    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  799    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  800    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  801    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  802    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  803    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  804   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  805    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  806    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  807    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  808    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  809    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  810    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  811    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  812    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  813    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  814    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  815    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  816   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  817    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  818    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  819    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  820    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  821    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  822    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  823    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  824    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  825    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  826    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  827    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  828   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  829    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  830    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  831    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  832    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  833    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  834    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  835    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  836    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  837    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  838    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  839    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  840   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  841    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  842    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  843    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  844    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  845    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  846    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  847    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  848    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  849    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  850    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  851    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  852   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  853    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  854    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  855    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  856    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  857    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  858    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  859    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  860    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  861    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  862    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  863    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  864   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  865    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  866    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  867    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  868    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  869    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  870    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  871    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  872    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  873    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  874    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  875    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  876   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  877    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  878    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  879    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  880    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  881    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  882    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  883    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  884    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  885    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  886    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  887    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  888   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  889    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  890    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  891    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  892    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  893    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  894    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  895    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  896    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  897    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  898    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  899    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  900   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  901    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  902    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  903    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  904    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  905    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  906    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  907    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  908    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  909    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  910    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  911    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  912   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  913    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  914    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  915    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  916    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  917    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  918    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  919    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  920    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  921    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  922    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  923    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  924   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  925    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  926    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  927    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  928    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  929    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  930    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  931    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  932    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  933    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  934    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  935    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  936   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  937    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  938    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  939    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  940    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  941    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  942    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  943    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  944    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  945    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  946    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  947    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  948   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  949    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  950    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  951    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  952    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  953    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  954    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  955    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  956    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  957    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  958    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  959    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  960   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  961    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  962    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  963    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  964    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  965    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  966    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  967    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  968    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  969    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  970    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  971    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  972   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  973    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  974    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  975    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  976    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  977    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  978    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  979    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  980    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  981    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  982    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  983    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  984   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  985    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  986    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  987    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf:  988    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+   scf:  989    -8879.641052    -9708.170846    -9708.239781  1.947497 -3.871545 92.218407
+   scf:  990    -9798.745356    -9983.418524    -9983.419408  1.871230 -2.865074 44.513143
+   scf:  991    -9806.998546    -9980.435813    -9980.435813  1.580849 -3.877674 42.513081
+   scf:  992    -8768.293966    -9670.559891    -9670.623768  2.068541 -4.069757 97.590744
+   scf:  993    -9662.265988    -9990.099876    -9990.099876  2.021326 -2.958263 30.162680
+   scf:  994    -9959.132610    -9998.513280    -9998.513280  0.716735 -3.529813 29.213653
+   scf:  995    -5808.111961    -8757.760691    -8757.763397  2.078656 -3.357089175.108959
+   scf:  996   -10139.400347   -10023.448945   -10023.448954  1.880870 -3.049005 17.934161
+   scf:  997    -9857.261511    -9994.041514    -9994.041514  1.502704 -3.593149 31.324704
+   scf:  998    -9996.400074   -10029.426660   -10029.444776  1.155651 -3.720220 14.421187
+   scf:  999    -9959.669756   -10017.941574   -10017.941902  1.044364 -3.134113 29.065521
+   scf: 1000    -9890.424025   -10000.041539   -10000.041539  1.474141 -3.592177 29.485884
+SCF_NOT_CONV: SCF did not converge in maximum number of steps (required).
+SCF_NOT_CONV: SCF did not converge in maximum number of steps (required).
+Geom step, scf iteration, dDmax, dHmax:    0  1000      1.474141     2.167172
+Geom step, scf iteration, dDmax, dHmax:    0  1000      1.474141     2.167172
+
+timer: Elapsed wall time (sec) =    1126.942
+timer: CPU execution times (sec):
+
+Routine            Calls   Time/call    Tot.time        %
+siesta                 1    3635.893    3635.893   100.00
+Setup                  1       1.130       1.130     0.03
+bands                  1       0.000       0.000     0.00
+KSV_init               1       0.000       0.000     0.00
+IterGeom               1    3634.762    3634.762    99.97
+geom_init              1       9.199       9.199     0.25
+state_init             1       1.245       1.245     0.03
+hsparse                1       0.001       0.001     0.00
+overlap                1       1.242       1.242     0.03
+Setup_H0               1       7.029       7.029     0.19
+naefs                  1       0.001       0.001     0.00
+dnaefs                 1       0.000       0.000     0.00
+MolMec                 1       0.000       0.000     0.00
+kinefsm                1       1.239       1.239     0.03
+nlefsm                 1       4.782       4.782     0.13
+DHSCF_Init             1       1.006       1.006     0.03
+DHSCF1                 1       0.039       0.039     0.00
+InitMesh               1       0.039       0.039     0.00
+INITMESH               1       0.000       0.000     0.00
+DHSCF2                 1       0.967       0.967     0.03
+REMESH                 1       0.070       0.070     0.00
+REORD               2005       0.007      13.499     0.37
+PHION                  1       0.425       0.425     0.01
+COMM_BSC            4005       0.004      17.695     0.49
+POISON              1002       0.304     305.100     8.39
+fft                 2004       0.123     246.731     6.79
+setup_H             1001       1.918    1920.385    52.82
+DHSCF               1001       1.913    1915.168    52.67
+DHSCF3              1001       1.913    1915.159    52.67
+rhoofd              1001       0.737     737.261    20.28
+XC                  1001       0.376     376.023    10.34
+GXC-CellXC          1001       0.349     349.549     9.61
+gridxc@cellXC       1001       0.349     349.543     9.61
+vmat                1001       0.062      62.343     1.71
+IterSCF             1000       3.626    3625.549    99.72
+compute_dm          1000       1.705    1705.442    46.91
+diagon              1000       1.705    1705.035    46.89
+c-eigval           11000       0.050     550.811    15.15
+c-buildHS          11000       0.004      40.485     1.11
+cdiag              22000       0.056    1227.359    33.76
+cdiag1             22000       0.003      60.978     1.68
+cdiag2             22000       0.007     143.045     3.93
+cdiag3             22000       0.046    1008.330    27.73
+c-eigvec           11000       0.069     761.342    20.94
+cdiag4             11000       0.001       7.802     0.21
+c-buildD           11000       0.035     388.929    10.70
+MIXER               1000       0.000       0.125     0.00
+  
+ABNORMAL_TERMINATION
+ABNORMAL_TERMINATION
+Stopping Program from Node:    0
+Stopping Program from Node:    0
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+#0  0x75fc0e223960 in ???
+#1  0x75fc0e222ac5 in ???
+#2  0x75fc0de4251f in ???
+	at ./signal/../sysdeps/unix/sysv/linux/x86_64/libc_sigaction.c:0
+#3  0x75fc0de969fc in __pthread_kill_implementation
+	at ./nptl/pthread_kill.c:44
+#4  0x75fc0de969fc in __pthread_kill_internal
+	at ./nptl/pthread_kill.c:78
+#5  0x75fc0de969fc in __GI___pthread_kill
+	at ./nptl/pthread_kill.c:89
+#6  0x75fc0de42475 in __GI_raise
+	at ../sysdeps/posix/raise.c:26
+#7  0x75fc0de287f2 in __GI_abort
+	at ./stdlib/abort.c:79
+#8  0x5e60bc7cb3fa in ???
+#9  0x5e60bc7c2155 in ???
+#10  0x75fc0de29d8f in __libc_start_call_main
+	at ../sysdeps/nptl/libc_start_call_main.h:58
+#11  0x75fc0de29e3f in __libc_start_main_impl
+	at ../csu/libc-start.c:392
+#12  0x5e60bc7c2212 in ???
+#13  0xffffffffffffffff in ???

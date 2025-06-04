@@ -1,0 +1,72 @@
+Neighbors of:     1 Ti at:   3.5704  3.5704  8.9739
+    5 O                     1.9310  Ang. Really at:  -0.0000  3.5704  8.2206
+    7 O                     1.9310  Ang. Really at:   3.5704 -0.0000  9.7272
+   12 O                     1.9758  Ang. Really at:   3.5704  3.5704  5.2402
+    6 O                     1.9758  Ang. Really at:   3.5704  3.5704 12.7076
+    4 Ti                    3.0344  Ang. Really at:  -0.0000  3.5704  4.4869
+    2 Ti                    3.0344  Ang. Really at:   3.5704 -0.0000 13.4608
+Neighbors of:     2 Ti at:   3.5704  0.0000 13.4608
+    6 O                     1.9310  Ang. Really at:   3.5704  3.5704 12.7076
+    8 O                     1.9310  Ang. Really at:  -0.0000  0.0000 14.2141
+    7 O                     1.9758  Ang. Really at:   3.5704  0.0000  9.7272
+    9 O                     1.9758  Ang. Really at:   3.5704  0.0000 17.1945
+    1 Ti                    3.0344  Ang. Really at:   3.5704  3.5704  8.9739
+Neighbors of:     3 Ti at:  -0.0000 -0.0000  0.0000
+   11 O                     1.9310  Ang. Really at:   0.0000  3.5704  0.7533
+   10 O                     1.9758  Ang. Really at:   0.0000  0.0000  3.7337
+    4 Ti                    3.0344  Ang. Really at:   0.0000  3.5704  4.4869
+Neighbors of:     4 Ti at:   0.0000  3.5704  4.4869
+   12 O                     1.9310  Ang. Really at:   3.5704  3.5704  5.2402
+   10 O                     1.9310  Ang. Really at:   0.0000 -0.0000  3.7337
+    5 O                     1.9758  Ang. Really at:   0.0000  3.5704  8.2206
+   11 O                     1.9758  Ang. Really at:   0.0000  3.5704  0.7533
+    1 Ti                    3.0344  Ang. Really at:   3.5704  3.5704  8.9739
+    3 Ti                    3.0344  Ang. Really at:   0.0000 -0.0000  0.0000
+Neighbors of:     5 O at:  -0.0000  3.5704  8.2206
+    1 Ti                    1.9310  Ang. Really at:   3.5704  3.5704  8.9739
+    4 Ti                    1.9758  Ang. Really at:   0.0000  3.5704  4.4869
+   12 O                     2.4612  Ang. Really at:   3.5704  3.5704  5.2402
+    7 O                     2.7884  Ang. Really at:   3.5704 -0.0000  9.7272
+    6 O                     3.0344  Ang. Really at:   3.5704  3.5704 12.7076
+   10 O                     3.0344  Ang. Really at:   0.0000 -0.0000  3.7337
+Neighbors of:     6 O at:   3.5704  3.5704 12.7076
+    2 Ti                    1.9310  Ang. Really at:   3.5704 -0.0000 13.4608
+    1 Ti                    1.9758  Ang. Really at:   3.5704  3.5704  8.9739
+    7 O                     2.4612  Ang. Really at:   3.5704 -0.0000  9.7272
+    8 O                     2.7884  Ang. Really at:  -0.0000 -0.0000 14.2141
+    9 O                     3.0344  Ang. Really at:   3.5704 -0.0000 17.1945
+    5 O                     3.0344  Ang. Really at:  -0.0000  3.5704  8.2206
+Neighbors of:     7 O at:   3.5704 -0.0000  9.7272
+    1 Ti                    1.9310  Ang. Really at:   3.5704  3.5704  8.9739
+    2 Ti                    1.9758  Ang. Really at:   3.5704  0.0000 13.4608
+    6 O                     2.4612  Ang. Really at:   3.5704  3.5704 12.7076
+    5 O                     2.7884  Ang. Really at:  -0.0000  3.5704  8.2206
+    8 O                     3.0344  Ang. Really at:  -0.0000  0.0000 14.2141
+   12 O                     3.0344  Ang. Really at:   3.5704  3.5704  5.2402
+Neighbors of:     8 O at:   0.0000  0.0000 14.2141
+    2 Ti                    1.9310  Ang. Really at:   3.5704  0.0000 13.4608
+    9 O                     2.4612  Ang. Really at:   3.5704  0.0000 17.1945
+    6 O                     2.7884  Ang. Really at:   3.5704  3.5704 12.7076
+    7 O                     3.0344  Ang. Really at:   3.5704  0.0000  9.7272
+Neighbors of:     9 O at:   3.5704  0.0000 17.1945
+    2 Ti                    1.9758  Ang. Really at:   3.5704  0.0000 13.4608
+    8 O                     2.4612  Ang. Really at:  -0.0000  0.0000 14.2141
+    6 O                     3.0344  Ang. Really at:   3.5704  3.5704 12.7076
+Neighbors of:    10 O at:   0.0000  0.0000  3.7337
+    4 Ti                    1.9310  Ang. Really at:   0.0000  3.5704  4.4869
+    3 Ti                    1.9758  Ang. Really at:   0.0000  0.0000  0.0000
+   11 O                     2.4612  Ang. Really at:   0.0000  3.5704  0.7533
+   12 O                     2.7884  Ang. Really at:   3.5704  3.5704  5.2402
+    5 O                     3.0344  Ang. Really at:   0.0000  3.5704  8.2206
+Neighbors of:    11 O at:  -0.0000  3.5704  0.7533
+    3 Ti                    1.9310  Ang. Really at:   0.0000 -0.0000  0.0000
+    4 Ti                    1.9758  Ang. Really at:   0.0000  3.5704  4.4869
+   10 O                     2.4612  Ang. Really at:   0.0000 -0.0000  3.7337
+   12 O                     3.0344  Ang. Really at:   3.5704  3.5704  5.2402
+Neighbors of:    12 O at:   3.5704  3.5704  5.2402
+    4 Ti                    1.9310  Ang. Really at:  -0.0000  3.5704  4.4869
+    1 Ti                    1.9758  Ang. Really at:   3.5704  3.5704  8.9739
+    5 O                     2.4612  Ang. Really at:  -0.0000  3.5704  8.2206
+   10 O                     2.7884  Ang. Really at:  -0.0000 -0.0000  3.7337
+    7 O                     3.0344  Ang. Really at:   3.5704 -0.0000  9.7272
+   11 O                     3.0344  Ang. Really at:  -0.0000  3.5704  0.7533
