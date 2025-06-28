@@ -1,0 +1,43 @@
+Executable      : siesta
+Version         : 5.2.2
+Architecture    : x86_64
+Compiler version: GNU-13.3.0
+Compiler flags  : -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem <prefix>/include -I<prefix>/_build_env/include -fdebug-prefix-map=<prefix>/work=/usr/local/src/conda/siesta-5.2.2 -fdebug-prefix-map=<prefix>=/usr/local/src/conda-prefix -I<prefix>/lib -fallow-argument-mismatch -O3
+Parallelisations: none
+NetCDF support
+NetCDF-4 support
+Lua support
+DFT-D3 support
+
+Runtime information:
+* Directory : /mnt/c/Users/jfarr/SSN/ProjectSim/anatase_w_nanoparticle
+* Running in serial mode.
+>> Start of run:  28-JUN-2025   1:36:33
+
+                           *********************** 
+                           *  WELCOME TO SIESTA  * 
+                           *********************** 
+
+ NOTE: Siesta V5 introduces some new defaults for basis-set generation
+ NOTE: which might lead to slightly different numerical results.
+ NOTE: Please see the manual for full details and compatibility measures.
+
+Cannot find requested input file "relaxation.fdf".
+Stopping Program from Node:    0
+Cannot find requested input file "relaxation.fdf".
+Stopping Program from Node:    0
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+#0  0x7f15d238232f in ???
+#1  0x7f15d23dbb2c in ???
+#2  0x7f15d238227d in ???
+#3  0x7f15d23658fe in ???
+#4  0x5632f91aa81d in ???
+#5  0x5632f8f1474d in ???
+#6  0x5632f8f0a0b4 in ???
+#7  0x7f15d23671c9 in ???
+#8  0x7f15d236728a in ???
+#9  0x5632f8f0a212 in ???
+#10  0xffffffffffffffff in ???

@@ -1,0 +1,43 @@
+SystemName          SurRel
+SystemLabel         SurRel
+
+NumberOfSpecies     3
+NumberOfAtoms       96
+SolutionMethod      diagon
+
+MeshCutoff          300 Ry
+ElectronicTemperature 1000 K  # Increased for better SCF stability
+
+PAO.BasisType       split
+PAO.SplitNorm       0.15
+
+DM.UseSaveDM        false
+DM.MixingWeight     0.05
+DM.NumberPulay      8
+DM.HistoryDepth     8
+DM.MixSCF1          true
+
+MaxSCFIterations    300
+SCF.Mix             0.05
+SCF.Mix.History     8
+SCF.MixerHistory     8
+
+SCF.Mixers
+  linear
+%endblock SCF.Mixers
+
+MD.TypeOfRun        CG
+MD.MaxForceTol      0.07 eV/Ang
+MD.MaxCGDispl       0.1 Ang
+MD.NumCGSteps       50
+MD.VariableCell     false
+
+WriteCoorXmol       true
+WriteCoorStep       true
+
+SaveRho             true
+SaveDeltaRho        false
+SaveHS              false
+
+WriteForces         true
+WriteKpoints        true
