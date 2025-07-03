@@ -1,0 +1,3 @@
+# ispin =    1
+#   ipol =    1
+#  Energy(eV) bin   ik        kpoint (Bohr^-1)           band_ini band_fin Eigen_ini (eV)      Eigen_fin(eV)     Delta eigen (eV)       Transition

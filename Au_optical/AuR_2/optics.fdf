@@ -1,0 +1,44 @@
+# Variable cell relaxation of a crystal (energy minimization)
+# https://docs.siesta-project.org/projects/siesta/en/latest/tutorials/basic/structure-optimization/
+SystemLabel AuPlas
+
+#input structure
+%include AuR_2.fdf
+
+#General aspects Calculation (Basis Set and functional)
+PAO.BasisSize DZP
+PAO.EnergyShift     100 meV
+XC.functional     GGA
+XC.authors        PBE
+
+OpticalCalculation      T
+Optical.Energy.Minimum  -8 eV
+Optical.Energy.Maximum  8 eV
+
+Optical.Scissor     3.000 eV
+
+Optical.PolarizationType  polarized
+%block Optical.Vector
+1.0 0.0 0.5
+%endblock Optical.Vector
+
+# General Output
+SaveHS true   #Save the Hamiltonian
+
+
+
+# Geometry Optimization Output
+
+WriteCoorXmol          true         #Save the final coordinates in .xyz format 
+
+WriteMDXmol            true         #Writes the coordinates 
+                                    #of all atoms at all steps
+                                    #in a .ANI file
+                                    #in xyz format
+                                    
+WriteMDhistory         true         #writes .MDE and .MD files
+                                    # with output data from MD simulation
+                                    # MDE contains: Temp, energy, volume, pressure 
+                                    # (human readable)
+                                    # MD contains coords vel lattice vectors
+                                    # (unformatted; post-process with iomd.f)  
