@@ -1,0 +1,32 @@
+Neighbors of:     1 Au at:   0.0000  0.0000  0.0000
+    3 Au                    2.9495  Ang. Really at:   3.9413  0.0000  3.9413
+    2 Au                    2.9495  Ang. Really at:   0.0000  3.9413  3.9413
+    4 Au                    2.9495  Ang. Really at:   3.9413  3.9413  0.0000
+Neighbors of:     2 Au at:   0.0000  3.9413  3.9413
+    1 Au                    2.9495  Ang. Really at:   0.0000  0.0000  0.0000
+    3 Au                    2.9495  Ang. Really at:   3.9413  0.0000  3.9413
+    4 Au                    2.9495  Ang. Really at:   3.9413  3.9413  0.0000
+    8 Au                    2.9495  Ang. Really at:   0.0000  0.0000  7.8826
+    7 Au                    2.9495  Ang. Really at:   0.0000  7.8826  0.0000
+Neighbors of:     3 Au at:   3.9413  0.0000  3.9413
+    4 Au                    2.9495  Ang. Really at:   3.9413  3.9413  0.0000
+    1 Au                    2.9495  Ang. Really at:   0.0000  0.0000  0.0000
+    2 Au                    2.9495  Ang. Really at:   0.0000  3.9413  3.9413
+    8 Au                    2.9495  Ang. Really at:   0.0000  0.0000  7.8826
+    6 Au                    2.9495  Ang. Really at:   7.8826  0.0000  0.0000
+Neighbors of:     4 Au at:   3.9413  3.9413  0.0000
+    2 Au                    2.9495  Ang. Really at:   0.0000  3.9413  3.9413
+    1 Au                    2.9495  Ang. Really at:   0.0000  0.0000  0.0000
+    3 Au                    2.9495  Ang. Really at:   3.9413  0.0000  3.9413
+    7 Au                    2.9495  Ang. Really at:   0.0000  7.8826  0.0000
+    6 Au                    2.9495  Ang. Really at:   7.8826  0.0000  0.0000
+ Atom            5 : no bonds for rmax specified:    3.1750632654179998       Ang.
+Neighbors of:     6 Au at:   7.8826  0.0000  0.0000
+    3 Au                    2.9495  Ang. Really at:   3.9413  0.0000  3.9413
+    4 Au                    2.9495  Ang. Really at:   3.9413  3.9413  0.0000
+Neighbors of:     7 Au at:   0.0000  7.8826  0.0000
+    2 Au                    2.9495  Ang. Really at:   0.0000  3.9413  3.9413
+    4 Au                    2.9495  Ang. Really at:   3.9413  3.9413  0.0000
+Neighbors of:     8 Au at:   0.0000  0.0000  7.8826
+    2 Au                    2.9495  Ang. Really at:   0.0000  3.9413  3.9413
+    3 Au                    2.9495  Ang. Really at:   3.9413  0.0000  3.9413
