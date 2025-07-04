@@ -1,0 +1,21 @@
+Neighbors of:     1 Au at:  -0.1771  0.2823  0.2823
+    2 Au                    2.6327  Ang. Really at:   0.0339  3.7971  3.7970
+    3 Au                    2.8146  Ang. Really at:   3.8577 -0.0178  3.7348
+    4 Au                    2.8146  Ang. Really at:   3.8577  3.7348 -0.0178
+Neighbors of:     2 Au at:   0.0339  3.7971  3.7970
+    1 Au                    2.6327  Ang. Really at:  -0.1771  0.2823  0.2823
+    4 Au                    2.8585  Ang. Really at:   3.8577  3.7348 -0.0178
+    3 Au                    2.8585  Ang. Really at:   3.8577 -0.0178  3.7348
+Neighbors of:     3 Au at:   3.8577 -0.0178  3.7348
+    5 Au                    2.7035  Ang. Really at:   7.4351  0.0891  0.0891
+    4 Au                    2.8083  Ang. Really at:   3.8577  3.7348 -0.0178
+    1 Au                    2.8146  Ang. Really at:  -0.1771  0.2823  0.2823
+    2 Au                    2.8585  Ang. Really at:   0.0339  3.7971  3.7970
+Neighbors of:     4 Au at:   3.8577  3.7348 -0.0178
+    5 Au                    2.7035  Ang. Really at:   7.4351  0.0891  0.0891
+    3 Au                    2.8083  Ang. Really at:   3.8577 -0.0178  3.7348
+    1 Au                    2.8146  Ang. Really at:  -0.1771  0.2823  0.2823
+    2 Au                    2.8585  Ang. Really at:   0.0339  3.7971  3.7970
+Neighbors of:     5 Au at:   7.4351  0.0891  0.0891
+    3 Au                    2.7035  Ang. Really at:   3.8577 -0.0178  3.7348
+    4 Au                    2.7035  Ang. Really at:   3.8577  3.7348 -0.0178
