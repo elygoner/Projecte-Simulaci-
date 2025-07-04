@@ -1,0 +1,28 @@
+LatticeConstant 1.0 Ang
+%block LatticeVectors
+ 20.00000000 0.00000000 0.00000000
+ 0.00000000 20.00000000 0.00000000
+ 0.00000000 0.00000000 20.00000000
+%endblock LatticeVectors
+
+NumberOfAtoms 12
+AtomicCoordinatesFormat Ang
+%block AtomicCoordinatesAndAtomicSpecies
+  0.64319100  0.19499600  0.71477800 1 #  1: Au
+  0.53222300  2.55694500  2.18986700 1 #  2: Au
+  2.65420200 -0.39462700  2.51392200 1 #  3: Au
+  2.12348600  2.47124100 -0.02549000 1 #  4: Au
+  2.60367800  3.61018000  3.71975000 1 #  5: Au
+  3.65806400  0.32055600 -0.08449900 1 #  6: Au
+ -0.29749300  3.99158500  0.17549000 1 #  7: Au
+  0.29624300  0.01352200  3.60146500 1 #  8: Au
+  4.06156500  2.11380700  2.07791100 1 #  9: Au
+  0.25108100  2.62708200  4.81565100 1 # 10: Au
+  5.24355600 -0.52007100  2.01670600 1 # 11: Au
+  2.25844200  5.06705900  0.33748600 1 # 12: Au
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+NumberOfSpecies 1
+%block ChemicalSpeciesLabel
+ 1 79 Au
+%endblock ChemicalSpeciesLabel
